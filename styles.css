@@ -4181,9 +4181,9 @@ button {
 .home-mascot {
   position: absolute;
   top: 140px;
-  width: 140px;
-  height: 180px;
-  background-size: contain;
+  width: 110px;
+  height: 130px;
+  background-size: 300%;
   background-repeat: no-repeat;
   pointer-events: auto;
   cursor: pointer;
@@ -4195,18 +4195,18 @@ button {
 .home-mascot.tigrou {
   left: 0;
   background-image: url('mascotte/tigrou%202.png');
-  background-position: left center;
+  background-position: center 8%;
   transform: translateX(0);
 }
 .home-mascot.tigrou.hidden-mascot {
-  transform: translateX(-45%);
+  transform: translateX(-65%);
 }
 .home-mascot.tigresse {
   right: 0;
   background-image: url('mascotte/tigresse%201.png');
-  background-position: right center;
+  background-position: center 8%;
   transform: translateX(0);
 }
 .home-mascot.tigresse.hidden-mascot {
-  transform: translateX(45%);
+  transform: translateX(65%);
 }
