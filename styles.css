@@ -4190,10 +4190,12 @@ button {
   opacity: 0.9;
 }
 .home-mascot.tigrou {
-  left: -40px;
+  left: 0;
   background-image: url('mascotte/tigrou%202.png');
+  background-position: left center;
 }
 .home-mascot.tigresse {
-  right: -40px;
+  right: 0;
   background-image: url('mascotte/tigresse%201.png');
+  background-position: right center;
 }
