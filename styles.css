@@ -4185,12 +4185,20 @@ button {
   height: 180px;
   background-size: contain;
   background-repeat: no-repeat;
-  pointer-events: auto;
+  pointer-events: none;
   cursor: pointer;
   z-index: 50;
   opacity: 1;
   transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.home-mascot::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  pointer-events: auto;
 }
 .home-mascot.tigrou {
   left: 0;
@@ -4198,6 +4206,10 @@ button {
   background-position: left center;
   transform-origin: bottom center;
   transform: translateX(0) translateY(0) rotate(0deg);
+}
+.home-mascot.tigrou::after {
+  left: 0;
+  width: 70%;
 }
 .home-mascot.tigrou.hidden-mascot {
   transform: translateX(-100px) translateY(30px) rotate(35deg);
@@ -4208,6 +4220,10 @@ button {
   background-position: right center;
   transform-origin: bottom center;
   transform: translateX(0) translateY(0) rotate(0deg);
+}
+.home-mascot.tigresse::after {
+  right: 0;
+  width: 70%;
 }
 .home-mascot.tigresse.hidden-mascot {
   transform: translateX(100px) translateY(30px) rotate(-35deg);
