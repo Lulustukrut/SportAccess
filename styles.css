@@ -4180,14 +4180,14 @@ button {
 /* --- Home Mascot --- */
 .home-mascot {
   position: absolute;
-  top: 140px;
-  width: 150px;
-  height: 200px;
+  top: 100px;
+  width: 250px;
+  height: 350px;
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
-  z-index: 5;
-  opacity: 0.9;
+  z-index: 0;
+  opacity: 0.15;
 }
 .home-mascot.tigrou {
   left: 0;

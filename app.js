@@ -819,14 +819,9 @@ document.addEventListener('DOMContentLoaded', initApp);
 
 
 function completeSignup() {
-  const firstname = document.getElementById('signup-firstname').value.trim() || 'Lucas';
-  const lastname = document.getElementById('signup-lastname').value.trim() || 'Martin';
-  const age = document.getElementById('signup-age').value.trim() || '28';
-  
-  if (!document.getElementById('signup-firstname').value.trim()) {
-    alert("Veuillez entrer votre prénom.");
-    return;
-  }
+  const firstname = document.getElementById('signup-firstname').value.trim() || 'Champion';
+  const lastname = document.getElementById('signup-lastname').value.trim() || '';
+  const age = document.getElementById('signup-age').value.trim() || '';
   
   // Get selected avatar
   const avatarRadio = document.querySelector('input[name="avatar"]:checked');
