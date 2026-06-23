@@ -733,8 +733,14 @@ function initBookSlots() {
 function initDarkModeToggle() {
   const toggle = document.getElementById('dark-mode-toggle');
   if (toggle) {
-    // Already in dark mode by default, toggle is cosmetic
-    toggle.checked = true;
+    toggle.checked = !document.body.classList.contains('light-mode');
+    toggle.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        document.body.classList.remove('light-mode');
+      } else {
+        document.body.classList.add('light-mode');
+      }
+    });
   }
 }
 
