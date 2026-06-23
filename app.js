@@ -866,7 +866,7 @@ function completeSignup() {
 
   const homeMascot = document.getElementById('home-mascot');
   if (homeMascot) {
-    homeMascot.className = 'home-mascot ' + homeMascotClass;
+    homeMascot.className = 'home-mascot hidden-mascot ' + homeMascotClass;
   }
   
   const signup = document.getElementById('screen-signup');
