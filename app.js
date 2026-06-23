@@ -102,9 +102,9 @@ function initSplash() {
       splash.style.display = 'none';
     }, 400);
 
-    const onboarding = document.getElementById('screen-onboarding');
-    onboarding.classList.add('active');
-    state.currentScreen = 'onboarding';
+    const signup = document.getElementById('screen-signup');
+    signup.classList.add('active');
+    state.currentScreen = 'signup';
   }, 2500);
 }
 
@@ -816,3 +816,26 @@ function initApp() {
 
 // Boot
 document.addEventListener('DOMContentLoaded', initApp);
+
+
+function completeSignup() {
+  const firstname = document.getElementById('signup-firstname').value.trim();
+  const lastname = document.getElementById('signup-lastname').value.trim();
+  const age = document.getElementById('signup-age').value.trim();
+  
+  if (!firstname) {
+    alert("Veuillez entrer votre prénom.");
+    return;
+  }
+  
+  const signup = document.getElementById('screen-signup');
+  signup.classList.add('exiting');
+  setTimeout(() => {
+    signup.classList.remove('active');
+    signup.classList.remove('exiting');
+  }, 350);
+
+  const onboarding = document.getElementById('screen-onboarding');
+  onboarding.classList.add('active');
+  state.currentScreen = 'onboarding';
+}
