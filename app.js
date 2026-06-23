@@ -819,13 +819,52 @@ document.addEventListener('DOMContentLoaded', initApp);
 
 
 function completeSignup() {
-  const firstname = document.getElementById('signup-firstname').value.trim();
-  const lastname = document.getElementById('signup-lastname').value.trim();
-  const age = document.getElementById('signup-age').value.trim();
+  const firstname = document.getElementById('signup-firstname').value.trim() || 'Lucas';
+  const lastname = document.getElementById('signup-lastname').value.trim() || 'Martin';
+  const age = document.getElementById('signup-age').value.trim() || '28';
   
-  if (!firstname) {
+  if (!document.getElementById('signup-firstname').value.trim()) {
     alert("Veuillez entrer votre prénom.");
     return;
+  }
+  
+  // Get selected avatar
+  const avatarRadio = document.querySelector('input[name="avatar"]:checked');
+  let avatarSrc = 'mascotte/tigresse detouré.png';
+  if (avatarRadio && avatarRadio.value === 'tigrou') {
+    avatarSrc = 'mascotte/tigrou3).png';
+  }
+  
+  // Save to state
+  state.user = {
+    firstname: firstname,
+    lastname: lastname,
+    age: age,
+    avatar: avatarSrc
+  };
+  
+  // Update UI
+  const homeName = document.getElementById('home-greeting-name');
+  if (homeName) homeName.textContent = firstname;
+  
+  const profileName = document.getElementById('profile-name');
+  if (profileName) profileName.textContent = firstname + ' ' + lastname;
+  
+  const profileAge = document.getElementById('profile-age-display');
+  if (profileAge) profileAge.textContent = age;
+  
+  const homeAvatar = document.getElementById('home-avatar-img');
+  if (homeAvatar) {
+    homeAvatar.style.backgroundImage = 'url("' + avatarSrc + '")';
+    homeAvatar.style.backgroundColor = 'var(--bg-surface)';
+    homeAvatar.innerHTML = '';
+  }
+  
+  const profileAvatar = document.getElementById('profile-avatar-img');
+  if (profileAvatar) {
+    profileAvatar.style.backgroundImage = 'url("' + avatarSrc + '")';
+    profileAvatar.style.backgroundColor = 'var(--bg-surface)';
+    profileAvatar.innerHTML = '';
   }
   
   const signup = document.getElementById('screen-signup');
