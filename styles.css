@@ -4169,12 +4169,31 @@ button {
 .avatar-img-container img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: bottom center;
-  transform: scale(1.1);
-  transform-origin: bottom;
+  object-fit: cover;
 }
 .signup-form input:focus {
   border-color: var(--primary);
   background: rgba(255,255,255,0.06);
+}
+
+
+/* --- Home Mascot --- */
+.home-mascot {
+  position: absolute;
+  top: 140px;
+  width: 150px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.9;
+}
+.home-mascot.tigrou {
+  left: -40px;
+  background-image: url('mascotte/tigrou\ 2.png');
+}
+.home-mascot.tigresse {
+  right: -40px;
+  background-image: url('mascotte/tigresse\ 1.png');
 }

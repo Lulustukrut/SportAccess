@@ -857,9 +857,6 @@ function completeSignup() {
   if (homeAvatar) {
     homeAvatar.style.backgroundImage = 'url("' + avatarSrc + '")';
     homeAvatar.style.backgroundColor = 'var(--bg-surface)';
-    homeAvatar.style.backgroundSize = '90%';
-    homeAvatar.style.backgroundPosition = 'bottom center';
-    homeAvatar.style.backgroundRepeat = 'no-repeat';
     homeAvatar.innerHTML = '';
   }
   
