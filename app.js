@@ -831,8 +831,10 @@ function completeSignup() {
   // Get selected avatar
   const avatarRadio = document.querySelector('input[name="avatar"]:checked');
   let avatarSrc = 'mascotte/tigresse 1.png';
+  let homeMascotClass = 'tigresse';
   if (avatarRadio && avatarRadio.value === 'tigrou') {
     avatarSrc = 'mascotte/tigrou 2.png';
+    homeMascotClass = 'tigrou';
   }
   
   // Save to state
@@ -865,6 +867,11 @@ function completeSignup() {
     profileAvatar.style.backgroundImage = 'url("' + avatarSrc + '")';
     profileAvatar.style.backgroundColor = 'var(--bg-surface)';
     profileAvatar.innerHTML = '';
+  }
+
+  const homeMascot = document.getElementById('home-mascot');
+  if (homeMascot) {
+    homeMascot.className = 'home-mascot ' + homeMascotClass;
   }
   
   const signup = document.getElementById('screen-signup');
