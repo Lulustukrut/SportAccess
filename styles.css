@@ -4199,7 +4199,7 @@ button {
   transform: translateX(0);
 }
 .home-mascot.tigrou.hidden-mascot {
-  transform: translateX(-55%);
+  transform: translateX(-30%);
 }
 .home-mascot.tigresse {
   right: 0;
@@ -4208,5 +4208,5 @@ button {
   transform: translateX(0);
 }
 .home-mascot.tigresse.hidden-mascot {
-  transform: translateX(55%);
+  transform: translateX(30%);
 }
