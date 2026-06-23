@@ -4237,7 +4237,7 @@ button {
   width: 70%;
 }
 .home-mascot.tigrou.hidden-mascot {
-  transform: translateX(-100px) translateY(30px) rotate(35deg);
+  transform: translateX(-115px) translateY(30px) rotate(35deg);
 }
 .home-mascot.tigresse {
   right: 0;
@@ -4251,5 +4251,5 @@ button {
   width: 70%;
 }
 .home-mascot.tigresse.hidden-mascot {
-  transform: translateX(100px) translateY(30px) rotate(-35deg);
+  transform: translateX(115px) translateY(30px) rotate(-35deg);
 }
