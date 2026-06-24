@@ -3097,7 +3097,7 @@ button {
 }
 
 .payment-row.discount {
-  color: var(--secondary);
+  color: white;
 }
 
 .payment-row.total {
@@ -4830,6 +4830,5 @@ button {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.map-search-wrapper { border-color: white; }
-.map-search-wrapper:focus-within { border-color: var(--accent-yellow) !important; }
+.map-search-wrapper { border-color: var(--accent-yellow) !important; }
 
