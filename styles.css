@@ -4477,3 +4477,142 @@ button {
   transform: scale(0.7) translateY(10px);
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
+
+/* ==================== PACK DETAIL SCREEN ==================== */
+.pack-detail-hero {
+  position: relative;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  overflow: hidden;
+}
+
+.pack-detail-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%);
+}
+
+.pack-detail-hero .header-back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.pack-detail-content {
+  padding: 24px 20px;
+}
+
+.pack-tag-large {
+  display: inline-block;
+  background: var(--primary-gradient);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 32px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.pack-detail-header h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.pack-detail-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.price-old-large {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.price-new-large {
+  font-size: 2rem;
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.pack-detail-section {
+  padding: 24px 0;
+}
+
+.pack-detail-section h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.pack-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.pack-benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.pack-benefits-list i {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.pack-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.pack-action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  padding: 16px 20px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+}
+
+.pack-action-price {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.pack-action-bar .btn-primary {
+  width: auto;
+  padding: 14px 32px;
+}

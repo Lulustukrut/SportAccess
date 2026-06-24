@@ -335,7 +335,7 @@
             <button class="btn-see-all" onclick="navigateTo('savings')">Tout voir</button>
           </div>
           <div class="packs-carousel" id="packs-carousel">
-            <div class="pack-slide" onclick="navigateTo('savings')">
+            <div class="pack-slide" onclick="openPackDetail('pilates')">
               <div class="pack-slide-img" style="background-image: url('images/club_pilates.png'); background-size: cover; background-position: center;">
                 <span class="pack-tag">Best-seller</span>
               </div>
@@ -346,10 +346,10 @@
                   <span class="pack-price-old">45€</span>
                   <span class="pack-price-new">29€</span>
                 </div>
-                <button class="btn-pack">Voir l'offre</button>
+                <button class="btn-pack" onclick="openPackDetail('pilates')">Voir l'offre</button>
               </div>
             </div>
-            <div class="pack-slide" onclick="navigateTo('savings')">
+            <div class="pack-slide" onclick="openPackDetail('multisports')">
               <div class="pack-slide-img" style="background-image: url('images/club_tennis.png'); background-size: cover; background-position: center;">
                 <span class="pack-tag">Nouveau</span>
               </div>
@@ -360,10 +360,10 @@
                   <span class="pack-price-old">80€</span>
                   <span class="pack-price-new">49€</span>
                 </div>
-                <button class="btn-pack">Voir l'offre</button>
+                <button class="btn-pack" onclick="openPackDetail('multisports')">Voir l'offre</button>
               </div>
             </div>
-            <div class="pack-slide" onclick="navigateTo('savings')">
+            <div class="pack-slide" onclick="openPackDetail('yoga')">
               <div class="pack-slide-img" style="background-image: url('images/club_yoga.png'); background-size: cover; background-position: center;">
                 <span class="pack-tag">-50%</span>
               </div>
@@ -374,7 +374,7 @@
                   <span class="pack-price-old">50€</span>
                   <span class="pack-price-new">25€</span>
                 </div>
-                <button class="btn-pack">Voir l'offre</button>
+                <button class="btn-pack" onclick="openPackDetail('yoga')">Voir l'offre</button>
               </div>
             </div>
           </div>
@@ -2262,6 +2262,61 @@
           <p>Inviter un ami à ce cours ?</p>
           <button class="btn-invite" onclick="closeModal(); navigateTo('social')"><i class="ph ph-users"></i> Inviter</button>
         </div>
+      </div>
+    </div>
+
+    <!-- ==================== PACK DETAIL ==================== -->
+    <div id="screen-pack-detail" class="screen">
+      <div class="screen-scroll">
+        <!-- Hero section with dynamic bg image -->
+        <div class="pack-detail-hero" id="pack-detail-hero">
+          <button class="btn-icon header-back-btn" onclick="goBack()" style="background: rgba(255,255,255,0.2); backdrop-filter: blur(4px); color: white;">
+            <i class="ph ph-arrow-left"></i>
+          </button>
+        </div>
+        
+        <div class="pack-detail-content">
+          <div class="pack-detail-header">
+            <span class="pack-tag-large">Pack Bon Plan</span>
+            <h1 id="pack-detail-title">Pack Découverte Pilates</h1>
+            
+            <div class="pack-detail-pricing">
+              <span class="price-old-large" id="pack-detail-old-price">45€</span>
+              <span class="price-new-large" id="pack-detail-new-price">29€</span>
+            </div>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <div class="pack-detail-section">
+            <h3>Ce qui est inclus</h3>
+            <ul class="pack-benefits-list" id="pack-detail-benefits">
+              <li><i class="ph-fill ph-check-circle"></i> 3 séances de Pilates</li>
+              <li><i class="ph-fill ph-check-circle"></i> Valable 1 mois après achat</li>
+              <li><i class="ph-fill ph-check-circle"></i> Prêt du tapis inclus</li>
+            </ul>
+            <p class="pack-description" id="pack-detail-description">
+              Découvrez les bienfaits du Pilates avec notre pack de 3 séances. Renforcement musculaire, souplesse et relaxation au programme dans les meilleurs studios de votre ville.
+            </p>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <div class="pack-detail-section">
+            <h3>Où utiliser ce pack ?</h3>
+            <div class="clubs-scroll" id="pack-detail-clubs">
+              <!-- Clubs injected dynamically -->
+            </div>
+          </div>
+          
+          <div class="bottom-spacer" style="height: 100px;"></div>
+        </div>
+      </div>
+      
+      <!-- Sticky Action Bar -->
+      <div class="pack-action-bar">
+        <div class="pack-action-price" id="pack-action-price">29€</div>
+        <button class="btn-primary" onclick="buyPack()">Acheter ce pack</button>
       </div>
     </div>
 

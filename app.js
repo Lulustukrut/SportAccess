@@ -898,3 +898,68 @@ function completeSignup() {
   onboarding.classList.add('active');
   state.currentScreen = 'onboarding';
 }
+
+// --- Packs Logic ---
+const packsData = {
+  pilates: {
+    title: "Pack Découverte Pilates",
+    image: "images/club_pilates.png",
+    oldPrice: "45€",
+    newPrice: "29€",
+    description: "Découvrez les bienfaits du Pilates avec notre pack de 3 séances. Renforcement musculaire, souplesse et relaxation au programme dans les meilleurs studios de votre ville.",
+    benefits: [
+      "3 séances de Pilates",
+      "Valable 1 mois après achat",
+      "Prêt du tapis inclus"
+    ]
+  },
+  multisports: {
+    title: "Pack Multi-Sports",
+    image: "images/club_tennis.png",
+    oldPrice: "80€",
+    newPrice: "49€",
+    description: "Idéal pour les indécis ! Variez les plaisirs avec 5 accès à différents sports (Tennis, Padel, Natation, Escalade).",
+    benefits: [
+      "5 accès multi-activités",
+      "Valable 2 mois",
+      "Accès prioritaires aux réservations"
+    ]
+  },
+  yoga: {
+    title: "Pack Yoga Illimité",
+    image: "images/club_yoga.png",
+    oldPrice: "50€",
+    newPrice: "25€",
+    description: "Un mois complet pour trouver votre équilibre intérieur. Accès illimité à tous nos studios de Yoga partenaires.",
+    benefits: [
+      "Accès illimité pendant 1 mois",
+      "Plus de 15 studios partenaires",
+      "Toutes les pratiques (Hatha, Vinyasa, Yin)"
+    ]
+  }
+};
+
+function openPackDetail(packId) {
+  const pack = packsData[packId];
+  if (!pack) return;
+
+  // Update DOM elements
+  document.getElementById('pack-detail-hero').style.backgroundImage = `url('${pack.image}')`;
+  document.getElementById('pack-detail-title').textContent = pack.title;
+  document.getElementById('pack-detail-old-price').textContent = pack.oldPrice;
+  document.getElementById('pack-detail-new-price').textContent = pack.newPrice;
+  document.getElementById('pack-detail-description').textContent = pack.description;
+  document.getElementById('pack-action-price').textContent = pack.newPrice;
+
+  // Update benefits list
+  const benefitsList = document.getElementById('pack-detail-benefits');
+  benefitsList.innerHTML = pack.benefits.map(b => `<li><i class="ph-fill ph-check-circle"></i> ${b}</li>`).join('');
+
+  // Navigate to screen
+  navigateTo('pack-detail');
+}
+
+function buyPack() {
+  alert("Félicitations ! Votre achat a été validé. Le pack est maintenant disponible dans vos réservations.");
+  goBack();
+}
