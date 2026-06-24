@@ -3423,6 +3423,7 @@ button {
   font-size: 0.75rem;
   opacity: 0.8;
   font-weight: 500;
+  color: #131313;
 }
 
 .loyalty-card h3 {
@@ -3448,6 +3449,7 @@ button {
 .loyalty-progress span {
   font-size: 0.75rem;
   opacity: 0.8;
+  color: #131313;
 }
 
 /* Offer Cards */
