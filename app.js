@@ -194,14 +194,12 @@ function initFilterChips() {
     const btn = document.getElementById('pmr-btn');
     
     if (window.pmrActive) {
-      knob.style.right = '2px';
-      knob.style.left = 'auto';
+      knob.style.transform = 'translateX(18px)';
       track.style.background = 'var(--accent-yellow)';
       track.style.borderColor = 'var(--accent-yellow)';
       btn.style.borderColor = 'var(--accent-yellow)';
     } else {
-      knob.style.left = '2px';
-      knob.style.right = 'auto';
+      knob.style.transform = 'translateX(0px)';
       track.style.background = 'var(--surface)';
       track.style.borderColor = 'var(--outline-variant)';
       btn.style.borderColor = 'var(--border)';
