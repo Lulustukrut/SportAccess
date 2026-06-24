@@ -649,6 +649,13 @@ button {
   padding-bottom: 4px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  margin-right: -20px;
+  padding-right: 20px;
+}
+
+.categories-scroll::after {
+  content: '';
+  padding-right: 1px;
 }
 
 .categories-scroll::-webkit-scrollbar { display: none; }
@@ -658,21 +665,21 @@ button {
   align-items: center;
   gap: 6px;
   padding: 10px 16px;
-  background: var(--bg-card);
-  border: 1.5px solid var(--border);
+  background: var(--bg-elevated);
+  border: 1.5px solid transparent;
   border-radius: 32px;
   font-size: 0.82rem;
   font-weight: 500;
-  color: var(--text);
+  color: #ffffff;
   white-space: nowrap;
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
 .category-chip.active {
-  background: var(--primary-gradient);
-  border-color: transparent;
-  box-shadow: 0 4px 16px rgba(255, 85, 69, 0.35);
+  background: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  color: #000000;
 }
 
 .category-chip:active {
@@ -693,6 +700,13 @@ button {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
+  margin-right: -20px;
+  padding-right: 20px;
+}
+
+.packs-carousel::after {
+  content: '';
+  padding-right: 1px;
 }
 
 .packs-carousel::-webkit-scrollbar { display: none; }
@@ -725,8 +739,8 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: var(--primary-gradient);
-  color: white;
+  background: var(--accent-pink);
+  color: #000000;
   padding: 4px 10px;
   border-radius: 32px;
 }
@@ -766,7 +780,7 @@ button {
 .pack-price-new {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--accent-yellow);
   font-family: 'Sora', sans-serif;
 }
 
@@ -795,6 +809,13 @@ button {
   padding-bottom: 4px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  margin-right: -20px;
+  padding-right: 20px;
+}
+
+.clubs-scroll::after {
+  content: '';
+  padding-right: 1px;
 }
 
 .clubs-scroll::-webkit-scrollbar { display: none; }
@@ -902,7 +923,7 @@ button {
 }
 
 .club-price strong {
-  color: var(--primary-light);
+  color: var(--accent-yellow);
   font-size: 1rem;
 }
 
@@ -940,6 +961,13 @@ button {
   padding-bottom: 4px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  margin-right: -20px;
+  padding-right: 20px;
+}
+
+.coaches-scroll::after {
+  content: '';
+  padding-right: 1px;
 }
 
 .coaches-scroll::-webkit-scrollbar { display: none; }
@@ -994,7 +1022,7 @@ button {
 
 .coach-price {
   font-size: 0.75rem;
-  color: var(--primary-light);
+  color: var(--accent-yellow);
   font-weight: 600;
 }
 
@@ -4223,7 +4251,7 @@ button {
 }
 
 .tab.active {
-  color: var(--primary-light);
+  color: var(--accent-yellow);
 }
 
 .tab.active::before {
@@ -4232,7 +4260,7 @@ button {
   top: 0;
   width: 24px;
   height: 3px;
-  background: var(--primary-gradient);
+  background: var(--accent-yellow);
   border-radius: 0 0 100px 100px;
 }
 
@@ -4512,8 +4540,8 @@ button {
 
 .pack-tag-large {
   display: inline-block;
-  background: var(--primary-gradient);
-  color: white;
+  background: var(--accent-pink);
+  color: #000000;
   padding: 6px 14px;
   border-radius: 32px;
   font-size: 0.8rem;
@@ -4548,7 +4576,7 @@ button {
   font-size: 2rem;
   font-family: 'Sora', sans-serif;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--accent-yellow);
 }
 
 .pack-detail-section {
