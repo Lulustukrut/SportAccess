@@ -1147,7 +1147,7 @@ button {
 
 .referral-icon {
   font-size: 2rem;
-  color: var(--primary);
+  color: white;
 }
 
 .referral-text {
@@ -3357,8 +3357,8 @@ button {
 }
 
 .notif-item.unread {
-  border-color: rgba(255, 85, 69, 0.3);
-  background: rgba(255, 85, 69, 0.05);
+  border-color: rgba(255, 222, 33, 0.3);
+  background: rgba(255, 222, 33, 0.05);
 }
 
 .notif-icon {
