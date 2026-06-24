@@ -986,7 +986,8 @@ button {
   position: absolute;
   top: 16px;
   left: -32px;
-  background: rgba(224, 90, 232, 0.85); /* Glass effect with accent pink */
+  background: rgba(255, 255, 255, 0.15); /* Transparent grey glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #fff;
