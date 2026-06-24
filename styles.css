@@ -4,17 +4,17 @@
 
 /* --- CSS Custom Properties --- */
 :root, body.light-mode {
-  --primary: #eae549; /* Jaune */
-  --primary-light: #f7f4a1;
-  --primary-dark: #c2be31;
-  --primary-gradient: var(--primary); /* Pas de dégradé, couleur unie */
-  --on-primary: #1a1a1a; /* Texte foncé sur fond jaune/primaire */
+  --primary: #305cde; /* Bleu */
+  --primary-light: #527bff;
+  --primary-dark: #1e3a8a;
+  --primary-gradient: linear-gradient(135deg, #305cde, #f273f9); /* Dégradé Bleu vers Rose pour certains boutons */
+  --on-primary: #ffffff; /* Texte blanc */
   
   --secondary: #f273f9; /* Rose */
   --secondary-light: #f9b1fc;
   
   --accent-pink: #f273f9;
-  --bg: #305cde; /* Fond Bleu */
+  --bg: #ff6b35; /* Fond Orange */
   --bg-card: #0d0d1a; /* Sections opaques */
   --bg-card-hover: #16162d;
   --bg-surface: #121222;
@@ -100,9 +100,7 @@ button {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('fond/Design%20sans%20titre.png');
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(145deg, #ff8a00, #e52e71); /* Dégradé Orange vif vers Rose/Rouge pour être dynamique */
   z-index: -2;
   pointer-events: none;
 }
@@ -4715,9 +4713,7 @@ button {
 .packs-carousel,
 .clubs-scroll,
 .coaches-scroll {
-  margin-left: -20px;
   margin-right: -20px;
-  padding-left: 20px;
   padding-right: 20px;
 }
 
