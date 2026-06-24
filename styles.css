@@ -4709,3 +4709,22 @@ button {
   transform: scale(0.7) translateY(10px);
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
+
+/* FIX: Horizontal scrolling carousels edge-to-edge bleed */
+.categories-scroll,
+.packs-carousel,
+.clubs-scroll,
+.coaches-scroll {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.categories-scroll::after,
+.packs-carousel::after,
+.clubs-scroll::after,
+.coaches-scroll::after {
+  content: "";
+  padding-right: 1px;
+}
