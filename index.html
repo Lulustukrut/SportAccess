@@ -235,7 +235,18 @@
     <!-- ==================== HOME ==================== -->
     <div id="screen-home" class="screen">
       <div class="screen-scroll">
-        <div id="home-mascot" class="home-mascot hidden-mascot" onclick="this.classList.toggle('hidden-mascot')"></div>
+        <!-- Mascotte Tigrou (gauche) -->
+        <div id="home-mascot-tigrou" class="home-mascot tigrou hidden-mascot" onclick="toggleMascot(this)">
+          <div class="mascot-bubble bubble-right">
+            <p>Profitez de nos <strong>Packs Bons Plans</strong> pour découvrir de nouveaux sports à <strong>prix réduit</strong> !</p>
+          </div>
+        </div>
+        <!-- Mascotte Tigresse (droite) -->
+        <div id="home-mascot-tigresse" class="home-mascot tigresse hidden-mascot" onclick="toggleMascot(this)">
+          <div class="mascot-bubble bubble-left">
+            <p>Parrainez vos amis et gagnez des <strong>réductions exclusives</strong> sur votre prochain pack !</p>
+          </div>
+        </div>
         <!-- Header -->
         <header class="home-header">
           <div class="header-top">

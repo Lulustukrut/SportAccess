@@ -91,6 +91,10 @@ function updateTabBar(screenId) {
   });
 }
 
+function toggleMascot(element) {
+  element.classList.toggle('hidden-mascot');
+}
+
 // --- Splash Screen ---
 function initSplash() {
   setTimeout(() => {
