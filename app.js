@@ -875,15 +875,19 @@ function completeSignup() {
 
   const tigrouMascot = document.getElementById('home-mascot-tigrou');
   const tigresseMascot = document.getElementById('home-mascot-tigresse');
+  const searchTigrouMascot = document.getElementById('search-mascot-tigrou');
+  const searchTigresseMascot = document.getElementById('search-mascot-tigresse');
   
-  if (tigrouMascot && tigresseMascot) {
-    if (homeMascotClass === 'tigrou') {
-      tigrouMascot.style.display = 'block';
-      tigresseMascot.style.display = 'none';
-    } else {
-      tigrouMascot.style.display = 'none';
-      tigresseMascot.style.display = 'block';
-    }
+  if (homeMascotClass === 'tigrou') {
+    if (tigrouMascot) tigrouMascot.style.display = 'block';
+    if (tigresseMascot) tigresseMascot.style.display = 'none';
+    if (searchTigrouMascot) searchTigrouMascot.style.display = 'block';
+    if (searchTigresseMascot) searchTigresseMascot.style.display = 'none';
+  } else {
+    if (tigrouMascot) tigrouMascot.style.display = 'none';
+    if (tigresseMascot) tigresseMascot.style.display = 'block';
+    if (searchTigrouMascot) searchTigrouMascot.style.display = 'none';
+    if (searchTigresseMascot) searchTigresseMascot.style.display = 'block';
   }
   
   const signup = document.getElementById('screen-signup');
