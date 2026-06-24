@@ -908,14 +908,25 @@ const packsData = {
     image: "images/club_pilates.png",
     oldPrice: "45€",
     newPrice: "29€",
+    savings: "-35%",
     description: "Une initiation parfaite pour découvrir les bienfaits du Pilates et retrouver votre équilibre.",
     benefits: [
-      "3 séances de Pilates guidées",
-      "Prêt du tapis et serviette inclus",
-      "Accès aux vestiaires premium"
+      { text: "3 séances incluses", icon: "ph-person-simple-lotus" },
+      { text: "Tapis & serviette", icon: "ph-bag" },
+      { text: "Vestiaires premium", icon: "ph-shower" },
+      { text: "Accès tous niveaux", icon: "ph-star" }
     ],
-    validity: "Valable 1 mois après l'achat",
-    conditions: "Réservation obligatoire 24h à l'avance. Annulation gratuite jusqu'à 12h avant."
+    validity: "1 mois",
+    conditions: "Réservation obligatoire 24h à l'avance. Annulation gratuite jusqu'à 12h avant.",
+    gallery: [
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=300&fit=crop"
+    ],
+    partnerClubs: [
+      { name: "Zen Studio Paris", address: "11ème arrondissement", rating: "4.9", image: "images/club_yoga.png" },
+      { name: "Body & Mind Studio", address: "Place de la Nation", rating: "4.7", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop" }
+    ]
   },
   multisports: {
     title: "Pack Multi-Sports",
@@ -924,14 +935,25 @@ const packsData = {
     image: "images/club_tennis.png",
     oldPrice: "80€",
     newPrice: "49€",
+    savings: "-38%",
     description: "Idéal pour les indécis ! Variez les plaisirs avec 5 accès à différents sports de raquette et d'eau.",
     benefits: [
-      "5 accès multi-activités (Tennis, Padel, Natation)",
-      "Prêt de raquettes et balles inclus",
-      "Accès prioritaires aux réservations"
+      { text: "5 accès inclus", icon: "ph-ticket" },
+      { text: "Prêt de matériel", icon: "ph-tennis-ball" },
+      { text: "Résa prioritaire", icon: "ph-clock" },
+      { text: "Valable partout", icon: "ph-map-pin" }
     ],
-    validity: "Valable 2 mois après l'achat",
-    conditions: "Valable uniquement dans les clubs partenaires affichés."
+    validity: "2 mois",
+    conditions: "Valable uniquement dans les clubs partenaires affichés.",
+    gallery: [
+      "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1574629810360-7efbb4ea2db7?w=400&h=300&fit=crop"
+    ],
+    partnerClubs: [
+      { name: "Tennis Club République", address: "Bd Voltaire", rating: "4.6", image: "images/club_tennis.png" },
+      { name: "AquaFit Center", address: "Rue de Charonne", rating: "4.7", image: "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=400&h=300&fit=crop" }
+    ]
   },
   yoga: {
     title: "Pack Yoga Illimité",
@@ -940,14 +962,24 @@ const packsData = {
     image: "images/club_yoga.png",
     oldPrice: "50€",
     newPrice: "25€",
+    savings: "-50%",
     description: "Un mois complet pour trouver votre équilibre intérieur. Accès illimité à tous nos studios de Yoga partenaires.",
     benefits: [
-      "Accès illimité pendant 1 mois",
-      "Toutes les pratiques (Hatha, Vinyasa, Yin)",
-      "Tisane détox offerte après chaque séance"
+      { text: "Accès illimité", icon: "ph-infinity" },
+      { text: "Multi-studios", icon: "ph-buildings" },
+      { text: "Tous styles", icon: "ph-yin-yang" },
+      { text: "Tisane détox", icon: "ph-coffee" }
     ],
-    validity: "Valable 1 mois (de date à date)",
-    conditions: "Limité à un achat par personne. Non remboursable une fois activé."
+    validity: "1 mois",
+    conditions: "Limité à un achat par personne. Non remboursable une fois activé.",
+    gallery: [
+      "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1524863479829-916d8e77f114?w=400&h=300&fit=crop"
+    ],
+    partnerClubs: [
+      { name: "Zen Studio Paris", address: "11ème arrondissement", rating: "4.9", image: "images/club_yoga.png" }
+    ]
   }
 };
 
@@ -955,23 +987,71 @@ function openPackDetail(packId) {
   const pack = packsData[packId];
   if (!pack) return;
 
-  // Update DOM elements
+  // Update Hero
   document.getElementById('pack-detail-hero').style.backgroundImage = `url('${pack.image}')`;
-  document.getElementById('pack-detail-title').textContent = pack.title;
-  document.getElementById('pack-detail-old-price').textContent = pack.oldPrice;
-  document.getElementById('pack-detail-new-price').textContent = pack.newPrice;
-  document.getElementById('pack-detail-description').textContent = pack.description;
-  document.getElementById('pack-action-price').textContent = pack.newPrice;
+  
+  // Gallery
+  const galleryContainer = document.getElementById('pack-detail-gallery');
+  if (pack.gallery && pack.gallery.length > 0) {
+    let galleryHtml = '';
+    pack.gallery.slice(0, 2).forEach(img => {
+      galleryHtml += `<div class="gallery-item" style="background-image: url('${img}'); background-size: cover; background-position: center;"></div>`;
+    });
+    if (pack.gallery.length > 2) {
+      galleryHtml += `<div class="gallery-item gallery-more">+${pack.gallery.length - 2}</div>`;
+    }
+    galleryContainer.innerHTML = galleryHtml;
+    galleryContainer.style.display = 'flex';
+  } else {
+    galleryContainer.style.display = 'none';
+  }
 
-  // New fields
+  // Header
   document.getElementById('pack-detail-category').textContent = pack.category;
   document.getElementById('pack-detail-badge').textContent = pack.badge;
+  document.getElementById('pack-detail-title').textContent = pack.title;
+  
+  // Quick Info
+  document.getElementById('pack-qi-new-price').textContent = pack.newPrice;
+  document.getElementById('pack-qi-old-price').textContent = pack.oldPrice;
+  document.getElementById('pack-qi-savings').textContent = pack.savings;
+  document.getElementById('pack-qi-validity').textContent = pack.validity;
+  
+  // Description
+  document.getElementById('pack-detail-description').textContent = pack.description;
+
+  // Benefits (Amenities Grid)
+  const benefitsList = document.getElementById('pack-detail-benefits');
+  benefitsList.innerHTML = pack.benefits.map(b => `
+    <div class="amenity"><i class="ph ${b.icon}"></i> ${b.text}</div>
+  `).join('');
+
+  // Conditions
   document.getElementById('pack-detail-validity').textContent = pack.validity;
   document.getElementById('pack-detail-conditions').textContent = pack.conditions;
 
-  // Update benefits list
-  const benefitsList = document.getElementById('pack-detail-benefits');
-  benefitsList.innerHTML = pack.benefits.map(b => `<li><i class="ph-fill ph-check-circle"></i> ${b}</li>`).join('');
+  // Partner Clubs
+  const clubsContainer = document.getElementById('pack-detail-clubs');
+  if (pack.partnerClubs && pack.partnerClubs.length > 0) {
+    clubsContainer.innerHTML = pack.partnerClubs.map(club => `
+      <div class="club-card" onclick="openClubDetail('zen-studio')">
+        <div class="club-card-img" style="background-image: url('${club.image}'); background-size: cover; background-position: center;">
+        </div>
+        <div class="club-card-info">
+          <h3>${club.name}</h3>
+          <p>${club.address}</p>
+          <div class="club-card-rating">
+            <i class="ph-fill ph-star"></i> ${club.rating}
+          </div>
+        </div>
+      </div>
+    `).join('');
+  } else {
+    clubsContainer.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem; padding: 0 20px;">Aucun club partenaire spécifié.</p>';
+  }
+
+  // Sticky Action Bar
+  document.getElementById('pack-action-price').textContent = pack.newPrice;
 
   // Setup Mascot Interaction
   setupPackMascot();

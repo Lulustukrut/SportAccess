@@ -2274,31 +2274,57 @@
             <i class="ph ph-arrow-left"></i>
           </button>
         </div>
+
+        <!-- Gallery -->
+        <div class="detail-gallery" id="pack-detail-gallery">
+          <!-- Injected via JS -->
+        </div>
         
         <div class="pack-detail-content">
           <div class="pack-detail-header">
             <span class="pack-tag-large" id="pack-detail-badge">Pack Bon Plan</span>
             <div class="pack-category" id="pack-detail-category">Catégorie</div>
-            <h1 id="pack-detail-title">Pack Découverte Pilates</h1>
-            
-            <div class="pack-detail-pricing">
-              <span class="price-old-large" id="pack-detail-old-price">45€</span>
-              <span class="price-new-large" id="pack-detail-new-price">29€</span>
+            <h1 id="pack-detail-title" style="margin-bottom: 0;">Pack Découverte Pilates</h1>
+          </div>
+
+          <!-- Quick Info -->
+          <div class="detail-quick-info" style="margin-top: 20px; margin-bottom: 0;">
+            <div class="quick-info-item">
+              <span class="qi-icon"><i class="ph ph-tag"></i></span>
+              <span class="qi-label">Prix Pack</span>
+              <span class="qi-value" id="pack-qi-new-price">29€</span>
+            </div>
+            <div class="quick-info-item">
+              <span class="qi-icon" style="color: var(--text-muted);"><i class="ph ph-money"></i></span>
+              <span class="qi-label">Valeur réelle</span>
+              <span class="qi-value" style="text-decoration: line-through; color: var(--text-muted);" id="pack-qi-old-price">45€</span>
+            </div>
+            <div class="quick-info-item">
+              <span class="qi-icon" style="color: var(--primary);"><i class="ph ph-trend-down"></i></span>
+              <span class="qi-label">Économie</span>
+              <span class="qi-value" style="color: var(--primary); font-weight: 800;" id="pack-qi-savings">-35%</span>
+            </div>
+            <div class="quick-info-item">
+              <span class="qi-icon"><i class="ph ph-calendar-blank"></i></span>
+              <span class="qi-label">Validité</span>
+              <span class="qi-value" id="pack-qi-validity">1 mois</span>
             </div>
           </div>
 
           <div class="section-divider"></div>
 
           <div class="pack-detail-section">
-            <h3>Ce qui est inclus</h3>
-            <ul class="pack-benefits-list" id="pack-detail-benefits">
-              <li><i class="ph-fill ph-check-circle"></i> 3 séances de Pilates</li>
-              <li><i class="ph-fill ph-check-circle"></i> Valable 1 mois après achat</li>
-              <li><i class="ph-fill ph-check-circle"></i> Prêt du tapis inclus</li>
-            </ul>
+            <h3>À propos de l'offre</h3>
             <p class="pack-description" id="pack-detail-description">
               Découvrez les bienfaits du Pilates avec notre pack de 3 séances. Renforcement musculaire, souplesse et relaxation au programme dans les meilleurs studios de votre ville.
             </p>
+          </div>
+
+          <div class="pack-detail-section">
+            <h3>Ce qui est inclus</h3>
+            <div class="amenities-grid" id="pack-detail-benefits">
+              <!-- Injected via JS -->
+            </div>
           </div>
 
           <div class="section-divider"></div>
