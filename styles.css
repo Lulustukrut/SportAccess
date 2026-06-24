@@ -2500,9 +2500,9 @@ button {
   font-weight: 600;
 }
 
-.slot-spots.available { color: var(--secondary); }
+.slot-spots.available { color: white; }
 .slot-spots.few { color: var(--accent-yellow); }
-.slot-spots.full { color: var(--accent-pink); }
+.slot-spots.full { color: white; }
 
 .slot-badge {
   font-size: 0.65rem;
@@ -2743,19 +2743,19 @@ button {
 
 /* Sticky Book Button */
 .sticky-book {
-  position: absolute;
-  bottom: calc(var(--tab-height) + 8px);
-  left: 16px;
-  right: 16px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 16px;
+  padding: 16px 20px 24px 20px;
   background: rgba(26, 26, 46, 0.95);
   backdrop-filter: blur(20px);
-  border: 1.5px solid var(--glass-border);
-  border-radius: var(--radius);
-  z-index: 10;
+  border-top: 1.5px solid var(--glass-border);
+  border-radius: 20px 20px 0 0;
+  z-index: 1000;
 }
 
 .sticky-from {
