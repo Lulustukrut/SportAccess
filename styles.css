@@ -2506,8 +2506,8 @@ button {
 
 .slot-badge {
   font-size: 0.65rem;
-  background: rgba(173, 198, 255, 0.15);
-  color: var(--secondary-light);
+  background: var(--accent-yellow);
+  color: #131313;
   padding: 2px 6px;
   border-radius: 32px;
 }
