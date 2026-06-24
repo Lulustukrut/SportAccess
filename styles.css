@@ -95,7 +95,7 @@ button {
   background-image: url('fond/Design%20sans%20titre.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /* background-attachment supprimé pour que cover s'applique à l'app et non au navigateur entier */
   overflow: hidden;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
   z-index: 1;
@@ -121,6 +121,7 @@ button {
     height: 92vh;
     border-radius: 40px;
     border: 2px solid var(--border-light);
+    clip-path: inset(0 round 40px); /* Forcer le découpage strict pour empêcher tout débordement du flou */
   }
 }
 
