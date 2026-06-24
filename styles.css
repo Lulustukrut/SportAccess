@@ -4293,8 +4293,7 @@ button {
   right: 0;
   height: var(--tab-height);
   display: flex;
-  background: rgba(13, 13, 26, 0.92);
-  backdrop-filter: blur(24px);
+  background: var(--bg);
   border-top: 1px solid var(--border);
   padding-bottom: var(--safe-bottom);
   z-index: 50;
