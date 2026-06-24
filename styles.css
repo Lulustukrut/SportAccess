@@ -8,11 +8,11 @@
   --primary-light: #305cde;
   --primary-dark: #305cde;
   --primary-gradient: #305cde;
-  --secondary: #f273f9;
-  --secondary-light: #f273f9;
-  --accent-pink: #f273f9;
-  --accent-orange: #eae549;
-  --accent-yellow: #eae549;
+  --secondary: #e05ae8;
+  --secondary-light: #e05ae8;
+  --accent-pink: #e05ae8;
+  --accent-orange: #d4d12c;
+  --accent-yellow: #d4d12c;
   --bg: #131313;
   --bg-card: #1c1b1b;
   --bg-card-hover: #2a2a2a;
@@ -42,11 +42,11 @@ body.light-mode {
   --primary-light: #305cde;
   --primary-dark: #305cde;
   --primary-gradient: #305cde;
-  --secondary: #f273f9;
-  --secondary-light: #f273f9;
-  --accent-pink: #f273f9;
-  --accent-orange: #eae549;
-  --accent-yellow: #eae549;
+  --secondary: #e05ae8;
+  --secondary-light: #e05ae8;
+  --accent-pink: #e05ae8;
+  --accent-orange: #d4d12c;
+  --accent-yellow: #d4d12c;
   --bg: #ffffff;
   --bg-card: #f5f5f5;
   --bg-card-hover: #ececec;
@@ -79,6 +79,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.6;
   overflow: hidden;
   height: 100vh;
   height: 100dvh;
@@ -779,7 +780,7 @@ button {
 }
 
 .pack-slide-info {
-  padding: 14px;
+  padding: 16px;
 }
 
 .pack-slide-info h3 {
@@ -794,7 +795,7 @@ button {
   font-size: 0.78rem;
   color: var(--text-muted);
   line-height: 1.4;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .pack-pricing {
@@ -910,7 +911,7 @@ button {
 }
 
 .club-card-info {
-  padding: 14px;
+  padding: 16px;
 }
 
 .club-card-rating {
@@ -918,7 +919,7 @@ button {
   align-items: center;
   gap: 4px;
   font-size: 0.8rem;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .stars {
@@ -942,7 +943,7 @@ button {
 .club-address {
   color: var(--text-secondary);
   font-size: 0.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .club-card-footer {
