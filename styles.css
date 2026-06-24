@@ -4409,7 +4409,7 @@ button {
 /* --- Home Mascot --- */
 .home-mascot {
   position: absolute;
-  top: 140px;
+  bottom: 120px;
   width: 140px;
   height: 180px;
   background-size: contain;
