@@ -2672,11 +2672,11 @@ button {
 .review-badge {
   margin-top: 10px;
   font-size: 0.72rem;
-  background: rgba(173, 198, 255, 0.1);
-  color: var(--secondary-light);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
   padding: 6px 10px;
   border-radius: var(--radius-sm);
-  border: 1.5px solid rgba(173, 198, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Coach Detail Cards */
