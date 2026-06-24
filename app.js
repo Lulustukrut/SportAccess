@@ -52,7 +52,7 @@ function navigateTo(screenId) {
 
   // Show/hide tab bar
   const tabBar = document.getElementById('tab-bar');
-  const screensWithTabs = ['home', 'search', 'map', 'social', 'profile'];
+  const screensWithTabs = ['home', 'search', 'bookings', 'social', 'profile'];
   if (tabBar) {
     tabBar.style.display = screensWithTabs.includes(screenId) ? 'flex' : 'flex';
   }

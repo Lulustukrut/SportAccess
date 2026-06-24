@@ -317,18 +317,54 @@
           </div>
         </section>
 
-        <!-- Promo Banner -->
+        <!-- Packs Bons Plans Carousel -->
         <section class="section">
-          <div class="promo-banner" onclick="navigateTo('savings')" style="background-image: linear-gradient(to right, var(--bg-card) 20%, transparent 80%), url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=400&fit=crop'); background-size: cover; background-position: right center;">
-            <div class="promo-content">
-              <span class="promo-tag"><i class="ph-fill ph-confetti"></i> Offre découverte</span>
-              <h3>1er cours offert</h3>
-              <p>Essayez un nouveau sport gratuitement</p>
-              <button class="btn-promo">En profiter →</button>
+          <div class="section-header">
+            <h2>Packs Bons Plans</h2>
+            <button class="btn-see-all" onclick="navigateTo('savings')">Tout voir</button>
+          </div>
+          <div class="packs-carousel" id="packs-carousel">
+            <div class="pack-slide" onclick="navigateTo('savings')">
+              <div class="pack-slide-img" style="background-image: url('images/club_pilates.png'); background-size: cover; background-position: center;">
+                <span class="pack-tag">Best-seller</span>
+              </div>
+              <div class="pack-slide-info">
+                <h3>Pack Découverte Pilates</h3>
+                <p>3 cours dans les meilleurs studios partenaires</p>
+                <div class="pack-pricing">
+                  <span class="pack-price-old">45€</span>
+                  <span class="pack-price-new">29€</span>
+                </div>
+                <button class="btn-pack">Voir l'offre</button>
+              </div>
             </div>
-            <div class="promo-decoration">
-              <div class="promo-circle"></div>
-              <div class="promo-circle promo-circle-2"></div>
+            <div class="pack-slide" onclick="navigateTo('savings')">
+              <div class="pack-slide-img" style="background-image: url('images/club_tennis.png'); background-size: cover; background-position: center;">
+                <span class="pack-tag">Nouveau</span>
+              </div>
+              <div class="pack-slide-info">
+                <h3>Pack Multi-Sports</h3>
+                <p>5 séances au choix parmi 10 sports différents</p>
+                <div class="pack-pricing">
+                  <span class="pack-price-old">80€</span>
+                  <span class="pack-price-new">49€</span>
+                </div>
+                <button class="btn-pack">Voir l'offre</button>
+              </div>
+            </div>
+            <div class="pack-slide" onclick="navigateTo('savings')">
+              <div class="pack-slide-img" style="background-image: url('images/club_yoga.png'); background-size: cover; background-position: center;">
+                <span class="pack-tag">-50%</span>
+              </div>
+              <div class="pack-slide-info">
+                <h3>Pack Yoga Illimité</h3>
+                <p>Accès illimité pendant 1 mois dans nos studios partenaires</p>
+                <div class="pack-pricing">
+                  <span class="pack-price-old">50€</span>
+                  <span class="pack-price-new">25€</span>
+                </div>
+                <button class="btn-pack">Voir l'offre</button>
+              </div>
             </div>
           </div>
         </section>
@@ -336,8 +372,8 @@
         <!-- Nearby Clubs -->
         <section class="section">
           <div class="section-header">
-            <h2>Clubs à proximité</h2>
-            <button class="btn-see-all" onclick="navigateTo('map')">Carte</button>
+            <h2>Recommandé pour vous</h2>
+            <button class="btn-see-all" onclick="navigateTo('search')">Tout voir</button>
           </div>
           <div class="clubs-scroll">
             <div class="club-card" onclick="navigateTo('club-detail')">
@@ -354,8 +390,8 @@
                 <h3>Zen Studio Paris</h3>
                 <p class="club-address"><i class="ph-fill ph-map-pin"></i> 450m • Rue Oberkampf</p>
                 <div class="club-card-footer">
-                  <span class="club-price">À partir de <strong>12€</strong>/séance</span>
-                  <span class="club-badge accessible"><i class="ph-fill ph-wheelchair"></i> PMR</span>
+                  <span class="club-price"><span class="price-old">20€</span> <strong>12€</strong>/séance</span>
+                  <span class="club-badge pack-badge">Pack Bon Plan</span>
                 </div>
               </div>
             </div>
@@ -373,7 +409,8 @@
                 <h3>Paris Tennis Club</h3>
                 <p class="club-address"><i class="ph-fill ph-map-pin"></i> 1.2km • Bd Voltaire</p>
                 <div class="club-card-footer">
-                  <span class="club-price">À partir de <strong>18€</strong>/h</span>
+                  <span class="club-price"><span class="price-old">25€</span> <strong>18€</strong>/h</span>
+                  <span class="club-badge pack-badge">Pack Bon Plan</span>
                 </div>
               </div>
             </div>
@@ -391,7 +428,7 @@
                 <h3>Body & Mind Studio</h3>
                 <p class="club-address"><i class="ph-fill ph-map-pin"></i> 800m • Place de la Nation</p>
                 <div class="club-card-footer">
-                  <span class="club-price">À partir de <strong>15€</strong>/séance</span>
+                  <span class="club-price"><span class="price-old">25€</span> <strong>15€</strong>/séance</span>
                   <span class="club-badge accessible"><i class="ph-fill ph-wheelchair"></i> PMR</span>
                 </div>
               </div>
@@ -523,14 +560,14 @@
         <!-- Social Activity -->
         <section class="section">
           <div class="section-header">
-            <h2>Activité de vos amis</h2>
+            <h2>Activité de la communauté</h2>
             <button class="btn-see-all" onclick="navigateTo('social')">Voir tout</button>
           </div>
           <div class="social-feed">
             <div class="social-item">
               <div class="social-avatar" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=face'); background-size: cover; background-position: center; color: transparent;">J</div>
               <div class="social-content">
-                <p><strong>Julie</strong> a réservé un cours de <strong>Yoga</strong></p>
+                <p><strong>Camille</strong> vient de réserver avec son <strong>Pack Yoga</strong></p>
                 <span class="social-time">Il y a 2h</span>
               </div>
               <button class="btn-join">Rejoindre</button>
@@ -538,11 +575,23 @@
             <div class="social-item">
               <div class="social-avatar" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face'); background-size: cover; background-position: center; color: transparent;">L</div>
               <div class="social-content">
-                <p><strong>Lucas</strong> a atteint son objectif hebdomadaire <i class="ph-fill ph-confetti"></i></p>
+                <p><strong>Lucas</strong> a utilisé son <strong>Pack Multi-Sports</strong> au Tennis Club</p>
                 <span class="social-time">Il y a 5h</span>
               </div>
               <button class="btn-like"><i class="ph ph-hands-clapping"></i></button>
             </div>
+          </div>
+        </section>
+
+        <!-- Referral CTA -->
+        <section class="section">
+          <div class="referral-banner" onclick="navigateTo('savings')">
+            <div class="referral-icon"><i class="ph-fill ph-gift"></i></div>
+            <div class="referral-text">
+              <h3>Parrainez un ami</h3>
+              <p>Offrez un Pack Bon Plan à un ami et recevez 10€ de réduction sur votre prochain pack</p>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
         </section>
 
@@ -754,6 +803,11 @@
         </div>
         <div class="bottom-spacer"></div>
       </div>
+      <!-- Floating Map Toggle -->
+      <button class="map-toggle-fab" onclick="navigateTo('map')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+        <span>Carte</span>
+      </button>
     </div>
 
     <!-- ==================== MAP ==================== -->
@@ -1410,9 +1464,7 @@
     <div id="screen-bookings" class="screen">
       <div class="screen-scroll">
         <header class="simple-header">
-          <button class="back-btn" onclick="goBack()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
+          <div style="width:40px"></div>
           <h2>Mes réservations</h2>
           <div style="width:40px"></div>
         </header>
@@ -2212,13 +2264,13 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <span>Explorer</span>
       </button>
-      <button class="tab" data-screen="map" onclick="navigateTo('map')">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-        <span>Carte</span>
+      <button class="tab" data-screen="bookings" onclick="navigateTo('bookings')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span>Réservations</span>
       </button>
       <button class="tab" data-screen="social" onclick="navigateTo('social')">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <span>Social</span>
+        <span>Communauté</span>
       </button>
       <button class="tab" data-screen="profile" onclick="navigateTo('profile')">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
