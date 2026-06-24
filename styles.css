@@ -1817,17 +1817,17 @@ button {
 
 .tag-handi {
   background: rgba(75, 142, 255, 0.15);
-  color: #81ECEC;
+  color: white;
 }
 
 .tag-beginner {
   background: rgba(162, 155, 254, 0.15);
-  color: var(--primary-light);
+  color: white;
 }
 
 .tag-promo {
   background: rgba(253, 121, 168, 0.15);
-  color: var(--accent-pink);
+  color: white;
 }
 
 .result-bottom {
@@ -1842,13 +1842,13 @@ button {
 }
 
 .result-price strong {
-  color: var(--primary-light);
+  color: white;
   font-size: 0.95rem;
 }
 
 .btn-book-small {
   background: var(--primary-gradient);
-  color: white;
+  color: #131313;
   padding: 6px 14px;
   border-radius: 32px;
   font-size: 0.75rem;
@@ -2512,7 +2512,7 @@ button {
 .btn-book-slot {
   padding: 8px 14px;
   background: var(--primary-gradient);
-  color: white;
+  color: #131313;
   border-radius: 32px;
   font-size: 0.78rem;
   font-weight: 600;
