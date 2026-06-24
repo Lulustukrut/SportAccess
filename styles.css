@@ -4698,3 +4698,11 @@ button {
   transform: scale(0.7) translateY(10px);
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
+
+/* Espacement à la fin des carrousels pour éviter que la mascotte ne cache le dernier élément */
+.packs-carousel::after, 
+.clubs-scroll::after, 
+.categories-scroll::after {
+  content: '';
+  flex: 0 0 70px;
+}

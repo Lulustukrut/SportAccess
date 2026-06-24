@@ -123,7 +123,8 @@
     <div id="screen-splash" class="screen active">
       <div class="splash-content">
         <div class="splash-logo">
-          <img src="logo/logo moovio blanc.png" alt="Moovio Logo" style="width: 220px; height: auto; margin-bottom: 20px;">
+          <img src="logo/logo moovio blanc.png" alt="Moovio" style="max-width: 180px;">
+          <h1 class="splash-title" style="display: none;">Sport<span>Access</span></h1>
           <p class="splash-subtitle">Le sport accessible à tous</p>
         </div>
         <div class="splash-loader">
@@ -183,7 +184,6 @@
     <!-- ==================== ONBOARDING ==================== -->
     <div id="screen-onboarding" class="screen">
       <div class="onboarding-container">
-        <img src="logo/logo moovio blanc.png" alt="Moovio Logo" style="position: absolute; top: 30px; left: 20px; width: 160px; height: auto; z-index: 10;">
         <div class="onboarding-slides" id="onboarding-slides">
           <div class="onboarding-slide active" data-slide="0" style="background-image: url('images/onboarding_discover.png');">
             <div class="onboarding-content">
@@ -235,7 +235,7 @@
         <header class="home-header">
           <div class="header-top">
             <div class="header-left">
-              <img src="logo/logo moovio blanc.png" alt="Moovio Logo" style="height: 28px; margin-bottom: 12px; display: block;">
+              <img src="logo/logo moovio blanc.png" alt="Moovio" style="height: 28px; margin-bottom: 8px;">
               <div class="greeting-text">
                 <span class="greeting-label">Bonjour <i class="ph ph-hand-waving"></i></span>
                 <h1 class="greeting-name" id="home-greeting-name">Marie</h1>
@@ -320,7 +320,7 @@
             <button class="btn-see-all" onclick="navigateTo('savings')">Tout voir</button>
           </div>
           <div class="packs-carousel" id="packs-carousel">
-            <div class="pack-slide theme-pink" onclick="openPackDetail('pilates')">
+            <div class="pack-slide" onclick="openPackDetail('pilates')">
               <div class="pack-slide-img" style="background-image: url('images/club_pilates.png'); background-size: cover; background-position: center;">
                 <span class="pack-tag">POPULAIRE</span>
               </div>
@@ -334,7 +334,7 @@
                 <button class="btn-pack" onclick="openPackDetail('pilates')">Voir l'offre</button>
               </div>
             </div>
-            <div class="pack-slide theme-blue" onclick="openPackDetail('multisports')">
+            <div class="pack-slide" onclick="openPackDetail('multisports')">
               <div class="pack-slide-img" style="background-image: url('images/club_tennis.png'); background-size: cover; background-position: center;">
                 <span class="pack-tag">Nouveau</span>
               </div>
@@ -348,7 +348,7 @@
                 <button class="btn-pack" onclick="openPackDetail('multisports')">Voir l'offre</button>
               </div>
             </div>
-            <div class="pack-slide theme-yellow" onclick="openPackDetail('yoga')">
+            <div class="pack-slide" onclick="openPackDetail('yoga')">
               <div class="pack-slide-img" style="background-image: url('images/club_yoga.png'); background-size: cover; background-position: center;">
                 <span class="pack-tag">PROMO</span>
               </div>
