@@ -4719,3 +4719,20 @@ button {
   content: "";
   padding-right: 1px;
 }
+
+/* THEMES FOR PACKS */
+.pack-slide.theme-pink .btn-pack,
+.pack-slide.theme-pink .pack-tag {
+  background: var(--accent-pink);
+  color: #0a0a0a;
+}
+.pack-slide.theme-blue .btn-pack,
+.pack-slide.theme-blue .pack-tag {
+  background: var(--secondary);
+  color: #fff;
+}
+.pack-slide.theme-yellow .btn-pack,
+.pack-slide.theme-yellow .pack-tag {
+  background: var(--primary);
+  color: #0a0a0a;
+}
