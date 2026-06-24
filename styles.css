@@ -4,21 +4,21 @@
 
 /* --- CSS Custom Properties --- */
 :root, body.light-mode {
-  --primary: #305cde; /* Bleu */
-  --primary-light: #527bff;
-  --primary-dark: #1e3a8a;
-  --primary-gradient: linear-gradient(135deg, #305cde, #f273f9); /* Dégradé Bleu vers Rose pour certains boutons */
-  --on-primary: #ffffff; /* Texte blanc */
+  --primary: #eae549; /* Jaune vif */
+  --primary-light: #f7f4a1;
+  --primary-dark: #c2be31;
+  --primary-gradient: var(--primary); /* Pas de dégradé, couleur unie */
+  --on-primary: #0a0a0a; /* Texte très foncé sur jaune */
   
-  --secondary: #f273f9; /* Rose */
-  --secondary-light: #f9b1fc;
+  --secondary: #305cde; /* Bleu */
+  --secondary-light: #527bff;
   
-  --accent-pink: #f273f9;
-  --bg: #ff6b35; /* Fond Orange */
-  --bg-card: #0d0d1a; /* Sections opaques */
-  --bg-card-hover: #16162d;
-  --bg-surface: #121222;
-  --bg-elevated: #1a1a33;
+  --accent-pink: #f273f9; /* Rose */
+  --bg: #0a0a0a; /* Fond Noir profond */
+  --bg-card: #15151a; /* Sections opaques très sombres */
+  --bg-card-hover: #1e1e26;
+  --bg-surface: #111116;
+  --bg-elevated: #1e1e26;
   
   --glass: #0d0d1a; /* Restauration du glassmorphism */
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -95,14 +95,9 @@ button {
   z-index: 1;
 }
 
-/* Image de fond placée en layer profond pour assurer que le flou s'applique dessus */
+/* Suppression de l'arrière-plan additionnel car le fond noir suffit */
 .app-container::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(145deg, #ff8a00, #e52e71); /* Dégradé Orange vif vers Rose/Rouge pour être dynamique */
-  z-index: -2;
-  pointer-events: none;
+  display: none;
 }
 
 /* Flou dispersif appliqué par-dessus l'image */
