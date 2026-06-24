@@ -3,6 +3,13 @@
    ======================================== */
 
 /* --- CSS Custom Properties --- */
+@font-face {
+  font-family: 'Vikings';
+  src: url('typos/NFL_Minnesota_Vikings.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root, body.light-mode {
   --primary: #eae549; /* Jaune vif */
   --primary-light: #f7f4a1;
@@ -14,11 +21,11 @@
   --secondary-light: #527bff;
   
   --accent-pink: #f273f9; /* Rose */
-  --bg: #0a0a0a; /* Fond Noir profond */
-  --bg-card: #15151a; /* Sections opaques très sombres */
-  --bg-card-hover: #1e1e26;
-  --bg-surface: #111116;
-  --bg-elevated: #1e1e26;
+  --bg: #000000; /* Fond Noir pur */
+  --bg-card: #0d0d10; /* Sections opaques très sombres */
+  --bg-card-hover: #16161a;
+  --bg-surface: #0a0a0c;
+  --bg-elevated: #16161a;
   
   --glass: #0d0d1a; /* Restauration du glassmorphism */
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -195,7 +202,7 @@ button {
 }
 
 .splash-title {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -363,7 +370,7 @@ button {
 }
 
 .onboarding-slide h2 {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 12px;
@@ -508,7 +515,7 @@ button {
 }
 
 .greeting-name {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   margin-top: 2px;
@@ -625,7 +632,7 @@ button {
 }
 
 .section-header h2 {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
 }
@@ -732,7 +739,7 @@ button {
 }
 
 .pack-slide-info h3 {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 4px;
@@ -763,7 +770,7 @@ button {
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--primary);
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
 }
 
 .btn-pack {
@@ -1110,7 +1117,7 @@ button {
 }
 
 .goal-number {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 1rem;
   font-weight: 800;
   display: block;
@@ -1127,7 +1134,7 @@ button {
 }
 
 .goal-details h3 {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 4px;
@@ -2224,7 +2231,7 @@ button {
 }
 
 .detail-section h3 {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 12px;
@@ -4528,7 +4535,7 @@ button {
 }
 
 .pack-detail-header h1 {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 16px;
@@ -4550,7 +4557,7 @@ button {
 
 .price-new-large {
   font-size: 2rem;
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-weight: 800;
   color: var(--primary);
 }
@@ -4560,7 +4567,7 @@ button {
 }
 
 .pack-detail-section h3 {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 16px;
@@ -4610,7 +4617,7 @@ button {
 }
 
 .pack-action-price {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Vikings', 'Sora', sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--text);
