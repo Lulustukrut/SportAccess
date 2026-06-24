@@ -888,7 +888,7 @@ button {
 }
 
 .stars {
-  color: #ffb874;
+  color: var(--accent-yellow);
 }
 
 .rating-value {
@@ -1015,7 +1015,7 @@ button {
 
 .coach-rating {
   font-size: 0.78rem;
-  color: #ffb874;
+  color: var(--accent-yellow);
   font-weight: 600;
   margin-bottom: 4px;
 }
@@ -1721,7 +1721,7 @@ button {
 
 .result-rating {
   font-size: 0.78rem;
-  color: #ffb874;
+  color: var(--accent-yellow);
   font-weight: 600;
   white-space: nowrap;
 }
@@ -1886,7 +1886,7 @@ button {
   border-radius: var(--radius-sm);
   font-size: 0.7rem;
   font-weight: 600;
-  color: #ffb874;
+  color: var(--accent-yellow);
   white-space: nowrap;
   margin-bottom: 4px;
   border: 1.5px solid var(--border);
@@ -2495,7 +2495,7 @@ button {
 }
 
 .score-stars {
-  color: #ffb874;
+  color: var(--accent-yellow);
   font-size: 0.85rem;
   margin: 4px 0;
 }
@@ -2531,7 +2531,7 @@ button {
 
 .score-fill {
   height: 100%;
-  background: #ffb874;
+  background: var(--accent-yellow);
   border-radius: 100px;
 }
 
@@ -2598,7 +2598,7 @@ button {
 }
 
 .review-stars {
-  color: #ffb874;
+  color: var(--accent-yellow);
   font-size: 0.82rem;
 }
 
@@ -3970,7 +3970,7 @@ button {
 
 .clc-rating {
   font-size: 0.78rem;
-  color: #ffb874;
+  color: var(--accent-yellow);
 }
 
 .clc-price {
