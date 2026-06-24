@@ -903,39 +903,51 @@ function completeSignup() {
 const packsData = {
   pilates: {
     title: "Pack Découverte Pilates",
+    category: "Sport / Bien-être",
+    badge: "POPULAIRE",
     image: "images/club_pilates.png",
     oldPrice: "45€",
     newPrice: "29€",
-    description: "Découvrez les bienfaits du Pilates avec notre pack de 3 séances. Renforcement musculaire, souplesse et relaxation au programme dans les meilleurs studios de votre ville.",
+    description: "Une initiation parfaite pour découvrir les bienfaits du Pilates et retrouver votre équilibre.",
     benefits: [
-      "3 séances de Pilates",
-      "Valable 1 mois après achat",
-      "Prêt du tapis inclus"
-    ]
+      "3 séances de Pilates guidées",
+      "Prêt du tapis et serviette inclus",
+      "Accès aux vestiaires premium"
+    ],
+    validity: "Valable 1 mois après l'achat",
+    conditions: "Réservation obligatoire 24h à l'avance. Annulation gratuite jusqu'à 12h avant."
   },
   multisports: {
     title: "Pack Multi-Sports",
+    category: "Sport / Mixte",
+    badge: "NOUVEAU",
     image: "images/club_tennis.png",
     oldPrice: "80€",
     newPrice: "49€",
-    description: "Idéal pour les indécis ! Variez les plaisirs avec 5 accès à différents sports (Tennis, Padel, Natation, Escalade).",
+    description: "Idéal pour les indécis ! Variez les plaisirs avec 5 accès à différents sports de raquette et d'eau.",
     benefits: [
-      "5 accès multi-activités",
-      "Valable 2 mois",
+      "5 accès multi-activités (Tennis, Padel, Natation)",
+      "Prêt de raquettes et balles inclus",
       "Accès prioritaires aux réservations"
-    ]
+    ],
+    validity: "Valable 2 mois après l'achat",
+    conditions: "Valable uniquement dans les clubs partenaires affichés."
   },
   yoga: {
     title: "Pack Yoga Illimité",
+    category: "Sport / Zen",
+    badge: "PROMO",
     image: "images/club_yoga.png",
     oldPrice: "50€",
     newPrice: "25€",
     description: "Un mois complet pour trouver votre équilibre intérieur. Accès illimité à tous nos studios de Yoga partenaires.",
     benefits: [
       "Accès illimité pendant 1 mois",
-      "Plus de 15 studios partenaires",
-      "Toutes les pratiques (Hatha, Vinyasa, Yin)"
-    ]
+      "Toutes les pratiques (Hatha, Vinyasa, Yin)",
+      "Tisane détox offerte après chaque séance"
+    ],
+    validity: "Valable 1 mois (de date à date)",
+    conditions: "Limité à un achat par personne. Non remboursable une fois activé."
   }
 };
 
@@ -951,12 +963,66 @@ function openPackDetail(packId) {
   document.getElementById('pack-detail-description').textContent = pack.description;
   document.getElementById('pack-action-price').textContent = pack.newPrice;
 
+  // New fields
+  document.getElementById('pack-detail-category').textContent = pack.category;
+  document.getElementById('pack-detail-badge').textContent = pack.badge;
+  document.getElementById('pack-detail-validity').textContent = pack.validity;
+  document.getElementById('pack-detail-conditions').textContent = pack.conditions;
+
   // Update benefits list
   const benefitsList = document.getElementById('pack-detail-benefits');
   benefitsList.innerHTML = pack.benefits.map(b => `<li><i class="ph-fill ph-check-circle"></i> ${b}</li>`).join('');
 
+  // Setup Mascot Interaction
+  setupPackMascot();
+
   // Navigate to screen
   navigateTo('pack-detail');
+}
+
+let packMascotObserver = null;
+let packMascotTimeout = null;
+
+function setupPackMascot() {
+  const mascot = document.getElementById('pack-mascot');
+  const conditionsSection = document.getElementById('pack-conditions-section');
+  
+  if (!mascot || !conditionsSection) return;
+  
+  // Make sure it's hidden initially
+  mascot.classList.add('hidden-mascot');
+  
+  // Set the right class based on chosen avatar
+  const avatarRadio = document.querySelector('input[name="avatar"]:checked');
+  const isTigrou = avatarRadio && avatarRadio.value === 'tigrou';
+  mascot.className = 'pack-mascot hidden-mascot ' + (isTigrou ? 'tigrou' : 'tigresse');
+  
+  // Update bubble class based on side
+  const bubble = mascot.querySelector('.mascot-bubble');
+  if (bubble) {
+    bubble.className = 'mascot-bubble ' + (isTigrou ? 'bubble-right' : 'bubble-left');
+  }
+  
+  // Clear any existing observer/timeout
+  if (packMascotObserver) packMascotObserver.disconnect();
+  if (packMascotTimeout) clearTimeout(packMascotTimeout);
+  
+  // Trigger on scroll (Intersection Observer)
+  packMascotObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      mascot.classList.remove('hidden-mascot');
+      packMascotObserver.disconnect();
+      if (packMascotTimeout) clearTimeout(packMascotTimeout);
+    }
+  }, { threshold: 0.5 });
+  
+  packMascotObserver.observe(conditionsSection);
+  
+  // Trigger on hesitation (e.g. 5 seconds)
+  packMascotTimeout = setTimeout(() => {
+    mascot.classList.remove('hidden-mascot');
+    if (packMascotObserver) packMascotObserver.disconnect();
+  }, 5000);
 }
 
 function buyPack() {

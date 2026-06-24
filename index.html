@@ -337,7 +337,7 @@
           <div class="packs-carousel" id="packs-carousel">
             <div class="pack-slide" onclick="openPackDetail('pilates')">
               <div class="pack-slide-img" style="background-image: url('images/club_pilates.png'); background-size: cover; background-position: center;">
-                <span class="pack-tag">Best-seller</span>
+                <span class="pack-tag">POPULAIRE</span>
               </div>
               <div class="pack-slide-info">
                 <h3>Pack Découverte Pilates</h3>
@@ -365,7 +365,7 @@
             </div>
             <div class="pack-slide" onclick="openPackDetail('yoga')">
               <div class="pack-slide-img" style="background-image: url('images/club_yoga.png'); background-size: cover; background-position: center;">
-                <span class="pack-tag">-50%</span>
+                <span class="pack-tag">PROMO</span>
               </div>
               <div class="pack-slide-info">
                 <h3>Pack Yoga Illimité</h3>
@@ -2277,7 +2277,8 @@
         
         <div class="pack-detail-content">
           <div class="pack-detail-header">
-            <span class="pack-tag-large">Pack Bon Plan</span>
+            <span class="pack-tag-large" id="pack-detail-badge">Pack Bon Plan</span>
+            <div class="pack-category" id="pack-detail-category">Catégorie</div>
             <h1 id="pack-detail-title">Pack Découverte Pilates</h1>
             
             <div class="pack-detail-pricing">
@@ -2302,10 +2303,27 @@
 
           <div class="section-divider"></div>
 
+          <div class="pack-detail-section" id="pack-conditions-section">
+            <h3>Validité & Conditions</h3>
+            <div class="conditions-box">
+              <p><strong>Validité :</strong> <span id="pack-detail-validity">Valable 1 mois après l'achat</span></p>
+              <p><strong>Conditions :</strong> <span id="pack-detail-conditions">Réservation obligatoire 24h à l'avance.</span></p>
+            </div>
+          </div>
+
+          <div class="section-divider"></div>
+
           <div class="pack-detail-section">
             <h3>Où utiliser ce pack ?</h3>
             <div class="clubs-scroll" id="pack-detail-clubs">
               <!-- Clubs injected dynamically -->
+            </div>
+          </div>
+          
+          <!-- Mascot Popup on Pack Detail -->
+          <div id="pack-mascot" class="pack-mascot hidden-mascot tigresse" onclick="this.classList.toggle('hidden-mascot')">
+            <div class="mascot-bubble bubble-left">
+              <p>Pstt ! Ce pack est notre <strong>meilleure offre</strong> du moment. N'oublie pas que tu peux <strong>inviter jusqu'à 3 amis</strong> sans frais supplémentaires !</p>
             </div>
           </div>
           

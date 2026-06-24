@@ -4616,3 +4616,85 @@ button {
   width: auto;
   padding: 14px 32px;
 }
+
+.pack-category {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.conditions-box {
+  background: var(--bg-surface);
+  border: 1px dashed var(--border);
+  padding: 16px;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.conditions-box p {
+  margin-bottom: 8px;
+}
+.conditions-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Pack Detail Mascot */
+.pack-mascot {
+  position: fixed;
+  bottom: 100px;
+  width: 120px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 101;
+  opacity: 1;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.pack-mascot::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  pointer-events: auto;
+}
+
+.pack-mascot.tigrou {
+  left: 0;
+  background-image: url('mascotte/tigrou%202.png');
+  background-position: left center;
+  transform-origin: bottom center;
+  transform: translateX(0) translateY(0) rotate(0deg);
+}
+.pack-mascot.tigrou::after { left: 0; width: 70%; }
+.pack-mascot.tigrou.hidden-mascot { transform: translateX(-115px) translateY(30px) rotate(35deg); }
+
+.pack-mascot.tigresse {
+  right: 0;
+  background-image: url('mascotte/tigresse%201.png');
+  background-position: right center;
+  transform-origin: bottom center;
+  transform: translateX(0) translateY(0) rotate(0deg);
+}
+.pack-mascot.tigresse::after { right: 0; width: 70%; }
+.pack-mascot.tigresse.hidden-mascot { transform: translateX(115px) translateY(30px) rotate(-35deg); }
+
+.pack-mascot:not(.hidden-mascot) .mascot-bubble {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+.pack-mascot.hidden-mascot .mascot-bubble {
+  opacity: 0;
+  transform: scale(0.7) translateY(10px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
