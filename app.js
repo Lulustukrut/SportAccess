@@ -50,13 +50,6 @@ function navigateTo(screenId) {
   // Update tab bar
   updateTabBar(screenId);
 
-  // Show/hide tab bar
-  const tabBar = document.getElementById('tab-bar');
-  const screensWithTabs = ['home', 'search', 'bookings', 'social', 'profile'];
-  if (tabBar) {
-    tabBar.style.display = screensWithTabs.includes(screenId) ? 'flex' : 'flex';
-  }
-
   // Haptic feedback simulation
   if (navigator.vibrate) navigator.vibrate(10);
 }
@@ -89,6 +82,12 @@ function updateTabBar(screenId) {
   tabs.forEach(tab => {
     tab.classList.toggle('active', tab.dataset.screen === screenId);
   });
+  
+  const tabBar = document.getElementById('tab-bar');
+  const screensWithTabs = ['home', 'search', 'bookings', 'social', 'profile'];
+  if (tabBar) {
+    tabBar.style.display = screensWithTabs.includes(screenId) ? 'flex' : 'none';
+  }
 }
 
 function toggleMascot(element) {
