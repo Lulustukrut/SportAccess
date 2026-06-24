@@ -834,7 +834,7 @@ function completeSignup() {
   
   // Get selected avatar
   const avatarRadio = document.querySelector('input[name="avatar"]:checked');
-  let avatarSrc = 'mascotte/tigresse detouré.png';
+  let avatarSrc = 'mascotte/tigresse_detouré.png';
   let homeMascotClass = 'tigresse';
   if (avatarRadio && avatarRadio.value === 'tigrou') {
     avatarSrc = 'mascotte/tigrou3).png';

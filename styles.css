@@ -4377,7 +4377,7 @@ button {
 
 .home-mascot.tigrou {
   left: 0;
-  background-image: url('mascotte/tigrou%202.png');
+  background-image: url('mascotte/tigrou_2.png');
   background-position: left center;
   transform-origin: bottom center;
   transform: translateX(0) translateY(0) rotate(0deg);
@@ -4392,7 +4392,7 @@ button {
 
 .home-mascot.tigresse {
   right: 0;
-  background-image: url('mascotte/tigresse%201.png');
+  background-image: url('mascotte/tigresse_1.png');
   background-position: right center;
   transform-origin: bottom center;
   transform: translateX(0) translateY(0) rotate(0deg);
