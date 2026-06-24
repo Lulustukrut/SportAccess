@@ -874,9 +874,17 @@ function completeSignup() {
     profileAvatar.innerHTML = '';
   }
 
-  const homeMascot = document.getElementById('home-mascot');
-  if (homeMascot) {
-    homeMascot.className = 'home-mascot hidden-mascot ' + homeMascotClass;
+  const tigrouMascot = document.getElementById('home-mascot-tigrou');
+  const tigresseMascot = document.getElementById('home-mascot-tigresse');
+  
+  if (tigrouMascot && tigresseMascot) {
+    if (homeMascotClass === 'tigrou') {
+      tigrouMascot.style.display = 'block';
+      tigresseMascot.style.display = 'none';
+    } else {
+      tigrouMascot.style.display = 'none';
+      tigresseMascot.style.display = 'block';
+    }
   }
   
   const signup = document.getElementById('screen-signup');
