@@ -4829,3 +4829,7 @@ button {
 .map-search-custom::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
+.map-search-wrapper { border-color: white; }
+.map-search-wrapper:focus-within { border-color: var(--accent-yellow) !important; }
+

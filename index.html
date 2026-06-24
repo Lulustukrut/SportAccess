@@ -815,7 +815,7 @@
         <button class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-surface-container-high rounded-full transition-colors" onclick="navigateTo('home')">
           <span class="material-symbols-outlined">arrow_back</span>
         </button>
-        <div class="flex-1 mx-3 bg-surface-container-highest rounded-full flex items-center px-3 h-10 border transition-colors" style="border-color: white;">
+        <div class="flex-1 mx-3 bg-surface-container-highest rounded-full flex items-center px-3 h-10 border transition-colors map-search-wrapper">
           <span class="material-symbols-outlined" style="color: white;">search</span>
           <input type="text" placeholder="Rechercher ici..." class="w-full bg-transparent border-none outline-none ml-2 text-sm map-search-custom" style="color: white;">
         </div>
@@ -828,11 +828,11 @@
         <div id="real-map" class="absolute inset-0 z-0"></div>
         
         <div class="absolute top-20 right-4 z-[1000]">
-          <button class="flex items-center gap-2 bg-surface rounded-full pl-4 pr-2 py-2 shadow-md border border-outline-variant hover:bg-surface-container-high transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
-            <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">accessible_forward</span>
-            <span class="font-label-lg text-sm text-on-surface font-semibold">PMR Routes</span>
+          <button class="flex items-center gap-2 rounded-full pl-4 pr-2 py-2 shadow-md border transition-colors focus:outline-none" style="background: #1a1a1a; border-color: var(--accent-yellow);">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; color: white;">accessible_forward</span>
+            <span class="font-label-lg text-sm font-semibold" style="color: white;">PMR Routes</span>
             <div class="w-10 h-5 bg-surface-variant rounded-full relative ml-1 border border-outline">
-              <div class="w-4 h-4 bg-secondary rounded-full absolute top-[1px] right-[2px] shadow-sm"></div>
+              <div class="w-4 h-4 rounded-full absolute top-[1px] right-[2px] shadow-sm" style="background: white;"></div>
             </div>
           </button>
         </div>

@@ -425,8 +425,8 @@ function showMapCard(index) {
     <div class="rounded-xl shadow-lg border overflow-hidden flex flex-col cursor-pointer transition-transform hover:scale-[1.02]" onclick="navigateTo('club-detail')" style="background: #131313; border: 1.5px solid var(--accent-yellow); color: white;">
       <div class="h-28 relative bg-surface-container-high">
         <div class="w-full h-full bg-cover bg-center" style="background-image: url('${club.image}')"></div>
-        <button class="absolute top-2 right-2 w-8 h-8 bg-surface rounded-full flex items-center justify-center shadow-sm text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-colors" onclick="event.stopPropagation(); window.toggleFavoriteMap(this)">
-          <span class="material-symbols-outlined text-[18px]">favorite</span>
+        <button class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition-colors" onclick="event.stopPropagation(); window.toggleFavoriteMap(this)" style="background: #1a1a1a;">
+          <span class="material-symbols-outlined text-[18px]" style="color: var(--accent-yellow);">favorite</span>
         </button>
         ${club.badge ? `
         <div class="absolute bottom-2 left-2 flex gap-1">
