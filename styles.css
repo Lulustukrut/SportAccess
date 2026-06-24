@@ -7,7 +7,7 @@
   --primary: #eae549; /* Jaune */
   --primary-light: #f7f4a1;
   --primary-dark: #c2be31;
-  --primary-gradient: linear-gradient(135deg, #f273f9, #eae549); /* Rose vers Jaune */
+  --primary-gradient: var(--primary); /* Pas de dégradé, couleur unie */
   --on-primary: #1a1a1a; /* Texte foncé sur fond jaune/primaire */
   
   --secondary: #f273f9; /* Rose */
@@ -61,10 +61,7 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-image: url('fond/Design%20sans%20titre.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: #0e0e0e; /* Desktop background */
   color: var(--text);
   overflow: hidden;
   height: 100vh;
@@ -95,11 +92,23 @@ button {
   max-width: 430px;
   height: 100vh;
   height: 100dvh;
-  background: rgba(48, 92, 222, 0.2); /* Fond semi-transparent pour voir l'image derrière */
-  backdrop-filter: blur(15px); /* Flou dispersif */
-  -webkit-backdrop-filter: blur(15px);
+  background-image: url('fond/Design%20sans%20titre.png');
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Flou dispersif derrière le contenu, mais à l'intérieur de l'app */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(48, 92, 222, 0.2); /* Tinted transparent blue */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: -1;
 }
 
 @media (min-width: 431px) {
