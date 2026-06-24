@@ -1079,7 +1079,7 @@ function setupPackMascot() {
   // Update bubble class based on side
   const bubble = mascot.querySelector('.mascot-bubble');
   if (bubble) {
-    bubble.className = 'mascot-bubble ' + (isTigrou ? 'bubble-right' : 'bubble-left');
+    bubble.className = 'mascot-bubble bubble-right';
   }
   
   // Clear any existing observer/timeout

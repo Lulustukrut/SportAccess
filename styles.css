@@ -4425,12 +4425,23 @@ button {
   pointer-events: auto;
 }
 
+.home-mascot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
 .home-mascot.tigrou {
   left: 0;
-  background-image: url('mascotte/tigrou_2.png');
-  background-position: left center;
   transform-origin: bottom center;
   transform: translateX(0) translateY(0) rotate(0deg);
+}
+.home-mascot.tigrou::before {
+  background-image: url('mascotte/tigrou_2.png');
+  background-position: left center;
 }
 .home-mascot.tigrou::after {
   left: 0;
@@ -4441,18 +4452,21 @@ button {
 }
 
 .home-mascot.tigresse {
-  right: 0;
-  background-image: url('mascotte/tigresse_1.png');
-  background-position: right center;
+  left: 0;
   transform-origin: bottom center;
   transform: translateX(0) translateY(0) rotate(0deg);
 }
+.home-mascot.tigresse::before {
+  background-image: url('mascotte/tigresse_1.png');
+  background-position: right center;
+  transform: scaleX(-1);
+}
 .home-mascot.tigresse::after {
-  right: 0;
+  left: 0;
   width: 70%;
 }
 .home-mascot.tigresse.hidden-mascot {
-  transform: translateX(115px) translateY(30px) rotate(-35deg);
+  transform: translateX(-115px) translateY(30px) rotate(35deg);
 }
 
 /* --- Mascot Speech Bubble --- */
@@ -4747,25 +4761,39 @@ button {
   pointer-events: auto;
 }
 
+.pack-mascot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
 .pack-mascot.tigrou {
   left: 0;
-  background-image: url('mascotte/tigrou_2.png');
-  background-position: left center;
   transform-origin: bottom center;
   transform: translateX(0) translateY(0) rotate(0deg);
+}
+.pack-mascot.tigrou::before {
+  background-image: url('mascotte/tigrou_2.png');
+  background-position: left center;
 }
 .pack-mascot.tigrou::after { left: 0; width: 70%; }
 .pack-mascot.tigrou.hidden-mascot { transform: translateX(-115px) translateY(30px) rotate(35deg); }
 
 .pack-mascot.tigresse {
-  right: 0;
-  background-image: url('mascotte/tigresse_1.png');
-  background-position: right center;
+  left: 0;
   transform-origin: bottom center;
   transform: translateX(0) translateY(0) rotate(0deg);
 }
-.pack-mascot.tigresse::after { right: 0; width: 70%; }
-.pack-mascot.tigresse.hidden-mascot { transform: translateX(115px) translateY(30px) rotate(-35deg); }
+.pack-mascot.tigresse::before {
+  background-image: url('mascotte/tigresse_1.png');
+  background-position: right center;
+  transform: scaleX(-1);
+}
+.pack-mascot.tigresse::after { left: 0; width: 70%; }
+.pack-mascot.tigresse.hidden-mascot { transform: translateX(-115px) translateY(30px) rotate(35deg); }
 
 .pack-mascot:not(.hidden-mascot) .mascot-bubble {
   opacity: 1;
