@@ -2253,6 +2253,36 @@
       </div>
     </div>
 
+    <!-- ==================== PACK PURCHASE MODAL ==================== -->
+    <div class="modal-overlay" id="pack-modal">
+      <div class="modal-content">
+        <div class="modal-success-icon">
+          <svg viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="38" fill="none" stroke="url(#successGrad)" stroke-width="3"/>
+            <path d="M24 40 L35 51 L56 30" fill="none" stroke="url(#successGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2>Achat validé !</h2>
+        <p>Félicitations ! Votre achat a été validé. Le pack est maintenant disponible dans vos réservations.</p>
+        <div class="modal-details">
+          <div class="modal-detail-row">
+            <span><i class="ph ph-calendar-blank"></i> Valable 1 mois</span>
+          </div>
+          <div class="modal-detail-row">
+            <span><i class="ph ph-credit-card"></i> 29€ débité</span>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn-accent btn-full" onclick="closeModal(); navigateTo('bookings')">Voir mes réservations</button>
+          <button class="btn-secondary btn-full" onclick="closeModal(); navigateTo('home')">Retour à l'accueil</button>
+        </div>
+        <div class="modal-social-share">
+          <p>Inviter un ami à ce cours ?</p>
+          <button class="btn-invite" onclick="closeModal(); navigateTo('social')"><i class="ph ph-users"></i> Inviter</button>
+        </div>
+      </div>
+    </div>
+
     <!-- ==================== PACK DETAIL ==================== -->
     <div id="screen-pack-detail" class="screen">
       <div class="screen-scroll">

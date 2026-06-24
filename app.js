@@ -487,10 +487,6 @@ function showBookingConfirmation() {
   if (modal) modal.classList.add('open');
 }
 
-function closeModal() {
-  const modal = document.getElementById('booking-modal');
-  if (modal) modal.classList.remove('open');
-}
 
 // --- Favorites ---
 function initFavorites() {
@@ -1105,6 +1101,13 @@ function setupPackMascot() {
 }
 
 function buyPack() {
-  alert("Félicitations ! Votre achat a été validé. Le pack est maintenant disponible dans vos réservations.");
-  goBack();
+  const packModal = document.getElementById('pack-modal');
+  if (packModal) packModal.classList.add('open');
+}
+
+function closeModal() {
+  const modal = document.getElementById('booking-modal');
+  if (modal) modal.classList.remove('open');
+  const packModal = document.getElementById('pack-modal');
+  if (packModal) packModal.classList.remove('open');
 }
