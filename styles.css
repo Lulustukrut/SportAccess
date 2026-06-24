@@ -4,30 +4,30 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  --primary: #f273f9;
-  --primary-light: #f7a8fb;
-  --primary-dark: #c045c5;
-  --primary-gradient: linear-gradient(135deg, #305cde, #f273f9);
-  --secondary: #305cde;
-  --secondary-light: #6a8bf0;
+  --primary: #305cde;
+  --primary-light: #305cde;
+  --primary-dark: #305cde;
+  --primary-gradient: #305cde;
+  --secondary: #f273f9;
+  --secondary-light: #f273f9;
   --accent-pink: #f273f9;
-  --accent-orange: #eae549; /* Using yellow here for warm accents */
+  --accent-orange: #eae549;
   --accent-yellow: #eae549;
   --bg: #131313;
   --bg-card: #1c1b1b;
   --bg-card-hover: #2a2a2a;
   --bg-surface: #201f1f;
   --bg-elevated: #2a2a2a;
-  --text: #e5e2e1;
-  --text-secondary: #ad8883; /* Keep somewhat neutral/warm */
-  --text-muted: #8a7a7a;
+  --text: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #aaaaaa;
   --border: #2c2c2e;
   --border-light: #353534;
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
-  --glass: rgba(242, 115, 249, 0.06); /* Based on #f273f9 */
-  --glass-border: rgba(242, 115, 249, 0.1);
+  --glass: rgba(48, 92, 222, 0.06);
+  --glass-border: rgba(48, 92, 222, 0.1);
   --radius: 8px;
   --radius-sm: 4px;
   --radius-lg: 24px;
@@ -38,12 +38,12 @@
 }
 
 body.light-mode {
-  --primary: #f273f9;
-  --primary-light: #f7a8fb;
-  --primary-dark: #c045c5;
-  --primary-gradient: linear-gradient(135deg, #305cde, #f273f9);
-  --secondary: #305cde;
-  --secondary-light: #6a8bf0;
+  --primary: #305cde;
+  --primary-light: #305cde;
+  --primary-dark: #305cde;
+  --primary-gradient: #305cde;
+  --secondary: #f273f9;
+  --secondary-light: #f273f9;
   --accent-pink: #f273f9;
   --accent-orange: #eae549;
   --accent-yellow: #eae549;
