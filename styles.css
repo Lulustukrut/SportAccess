@@ -61,7 +61,10 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
+  background-image: url('fond/Design%20sans%20titre.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text);
   overflow: hidden;
   height: 100vh;
@@ -92,15 +95,14 @@ button {
   max-width: 430px;
   height: 100vh;
   height: 100dvh;
-  background: var(--bg);
+  background: rgba(48, 92, 222, 0.2); /* Fond semi-transparent pour voir l'image derrière */
+  backdrop-filter: blur(15px); /* Flou dispersif */
+  -webkit-backdrop-filter: blur(15px);
   overflow: hidden;
-  box-shadow: 0 0 60px rgba(255, 85, 69, 0.12);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 431px) {
-  body {
-    background: #0e0e0e;
-  }
   .app-container {
     height: 92vh;
     border-radius: 40px;
@@ -412,7 +414,7 @@ button {
 
 /* --- Buttons --- */
 .btn-primary {
-  background: var(--primary-gradient);
+  background: var(--primary); /* Couleur unie */
   color: var(--on-primary);
   border: none;
   padding: 16px 32px;
