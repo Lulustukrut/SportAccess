@@ -196,8 +196,8 @@ function initFilterChips() {
     if (window.pmrActive) {
       knob.style.right = '2px';
       knob.style.left = 'auto';
-      track.style.background = 'var(--surface-variant)';
-      track.style.borderColor = 'var(--outline)';
+      track.style.background = 'var(--accent-yellow)';
+      track.style.borderColor = 'var(--accent-yellow)';
       btn.style.borderColor = 'var(--accent-yellow)';
     } else {
       knob.style.left = '2px';
@@ -473,8 +473,8 @@ function showMapCard(index) {
         </button>
         ${club.badge ? `
         <div class="absolute bottom-2 left-2 flex gap-1">
-          <span class="text-[10px] px-2 py-1 rounded-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border" style="background: transparent; color: var(--accent-yellow); border: 1.5px solid var(--accent-yellow);">
-            <span class="material-symbols-outlined text-[14px]" style="color: var(--accent-yellow);">accessible</span> ${club.badge}
+          <span class="text-[10px] px-2 py-1 rounded-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border" style="background: var(--accent-yellow); color: #131313; border: 1.5px solid var(--accent-yellow);">
+            <span class="material-symbols-outlined text-[14px]" style="color: #131313;">accessible</span> ${club.badge}
           </span>
         </div>` : ''}
       </div>
