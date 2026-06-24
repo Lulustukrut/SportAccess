@@ -828,6 +828,21 @@ function animateGoalRing() {
   }
 }
 
+// --- Sticky Search Header ---
+function initStickySearch() {
+  const homeScroll = document.getElementById('home-scroll-container');
+  const stickyHeader = document.getElementById('sticky-search-header');
+  if (homeScroll && stickyHeader) {
+    homeScroll.addEventListener('scroll', () => {
+      if (homeScroll.scrollTop > 120) {
+        stickyHeader.classList.add('visible');
+      } else {
+        stickyHeader.classList.remove('visible');
+      }
+    });
+  }
+}
+
 // --- Initialize App ---
 function initApp() {
   initSplash();
@@ -848,6 +863,7 @@ function initApp() {
   initTouchFeedback();
   initHorizontalScroll();
   initPostActions();
+  initStickySearch();
   initSocialButtons();
   initNotifications();
   initBookSlots();
