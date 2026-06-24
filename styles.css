@@ -863,6 +863,7 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
   flex-shrink: 0;
+  position: relative;
 }
 
 .club-card:active {
@@ -977,6 +978,22 @@ button {
   background: rgba(255, 85, 69, 0.15);
   color: var(--primary-light);
   border: 1.5px solid rgba(255, 85, 69, 0.3);
+}
+
+.pack-banner {
+  position: absolute;
+  top: 16px;
+  left: -32px;
+  background: var(--accent-pink);
+  color: #000;
+  padding: 4px 32px;
+  transform: rotate(-45deg);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  text-align: center;
 }
 
 .price-old {
@@ -4569,6 +4586,8 @@ button {
 
 .pack-detail-content {
   padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 .pack-tag-large {
