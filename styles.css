@@ -15,17 +15,17 @@
   
   --accent-pink: #f273f9;
   --bg: #305cde; /* Fond Bleu */
-  --bg-card: #1e3a8a; /* Couleur unie sombre, aucune transparence */
-  --bg-card-hover: #1e40af;
-  --bg-surface: #1e3a8a;
-  --bg-elevated: #1e40af;
+  --bg-card: rgba(0, 0, 0, 0.3); /* Restauration de la transparence / Glassmorphism */
+  --bg-card-hover: rgba(0, 0, 0, 0.4);
+  --bg-surface: rgba(0, 0, 0, 0.35);
+  --bg-elevated: rgba(0, 0, 0, 0.45);
   
-  --glass: #1e3a8a; /* Remplacement du glassmorphism par de l'uni */
+  --glass: rgba(0, 0, 0, 0.3); /* Restauration du glassmorphism */
   --glass-border: rgba(255, 255, 255, 0.2);
   
   --text: #ffffff; /* Texte blanc sur fond bleu */
-  --text-secondary: #f3f4f6;
-  --text-muted: #e5e7eb;
+  --text-secondary: rgba(255, 255, 255, 0.9);
+  --text-muted: rgba(255, 255, 255, 0.75);
   
   --border: rgba(255, 255, 255, 0.2);
   --border-light: rgba(255, 255, 255, 0.3);
@@ -92,10 +92,28 @@ button {
   max-width: 430px;
   height: 100vh;
   height: 100dvh;
-  background: var(--bg);
+  background-image: url('fond/Design%20sans%20titre.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   overflow: hidden;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
   z-index: 1;
+  /* FIX WebKit border-radius clipping bug for absolute/backdrop elements */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  isolation: isolate;
+}
+
+/* Flou dispersif derrière le contenu, mais à l'intérieur de l'app */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(48, 92, 222, 0.15); /* Tinted transparent blue */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 @media (min-width: 431px) {
@@ -138,9 +156,6 @@ button {
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  background-image: url('fond/Design%20sans%20titre.png');
-  background-size: cover;
-  background-position: top center;
   padding-bottom: calc(var(--tab-height) + 20px);
   scrollbar-width: none;
 }
