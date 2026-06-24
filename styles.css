@@ -18,17 +18,17 @@
   --accent-blue: #305cde;
   
   --bg: #305cde; /* Fond Bleu */
-  --bg-card: rgba(0, 0, 0, 0.15); /* Cartes Glassmorphism */
-  --bg-card-hover: rgba(0, 0, 0, 0.25);
-  --bg-surface: rgba(0, 0, 0, 0.2);
-  --bg-elevated: rgba(0, 0, 0, 0.3);
+  --bg-card: rgba(0, 0, 0, 0.4); /* Cartes Glassmorphism plus foncées pour lisibilité */
+  --bg-card-hover: rgba(0, 0, 0, 0.5);
+  --bg-surface: rgba(0, 0, 0, 0.5);
+  --bg-elevated: rgba(0, 0, 0, 0.6);
   
   --text: #ffffff; /* Texte blanc sur fond bleu */
-  --text-secondary: rgba(255, 255, 255, 0.85);
-  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-secondary: rgba(255, 255, 255, 0.9);
+  --text-muted: rgba(255, 255, 255, 0.8);
   
-  --border: rgba(255, 255, 255, 0.15);
-  --border-light: rgba(255, 255, 255, 0.25);
+  --border: rgba(255, 255, 255, 0.25);
+  --border-light: rgba(255, 255, 255, 0.35);
   
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -95,6 +95,7 @@ button {
   background-image: url('fond/Design%20sans%20titre.png');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   overflow: hidden;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
   z-index: 1;
