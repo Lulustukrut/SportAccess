@@ -4802,7 +4802,7 @@ button {
   background-position: left center;
 }
 .pack-mascot.tigrou::after { left: 0; width: 70%; }
-.pack-mascot.tigrou.hidden-mascot { transform: translateX(-80px) translateY(30px) rotate(35deg); }
+.pack-mascot.tigrou.hidden-mascot { transform: translateX(-60px) translateY(30px) rotate(35deg); }
 
 .pack-mascot.tigresse {
   left: 0;
@@ -4815,7 +4815,7 @@ button {
   transform: scaleX(-1);
 }
 .pack-mascot.tigresse::after { left: 0; width: 70%; }
-.pack-mascot.tigresse.hidden-mascot { transform: translateX(-80px) translateY(30px) rotate(35deg); }
+.pack-mascot.tigresse.hidden-mascot { transform: translateX(-60px) translateY(30px) rotate(35deg); }
 
 .pack-mascot:not(.hidden-mascot) .mascot-bubble {
   opacity: 1;
