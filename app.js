@@ -1033,7 +1033,7 @@ function openPackDetail(packId) {
   const clubsContainer = document.getElementById('pack-detail-clubs');
   if (pack.partnerClubs && pack.partnerClubs.length > 0) {
     clubsContainer.innerHTML = pack.partnerClubs.map(club => `
-      <div class="club-card" onclick="openClubDetail('zen-studio')">
+      <div class="club-card" onclick="navigateTo('club-detail')">
         <div class="club-card-img" style="background-image: url('${club.image}'); background-size: cover; background-position: center;">
         </div>
         <div class="club-card-info">
