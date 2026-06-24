@@ -375,28 +375,28 @@ function initRealMap() {
     let pinHtml = '';
     if (i === 2) {
       pinHtml = `<div class="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform map-pin-content">
-          <div class="bg-secondary text-on-secondary shadow-md rounded-full px-3 py-1 flex items-center gap-1 border border-secondary">
-            <span class="material-symbols-outlined text-sm">${club.iconName}</span>
-            <span class="font-label-sm text-xs font-bold">${club.price}</span>
+          <div class="shadow-md rounded-full px-3 py-1 flex items-center gap-1 border" style="background: var(--accent-yellow); color: #131313; border-color: var(--accent-yellow);">
+            <span class="material-symbols-outlined text-sm" style="color: #131313;">${club.iconName}</span>
+            <span class="font-label-sm text-xs font-bold" style="color: #131313;">${club.price}</span>
           </div>
-          <div class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-secondary mt-[-1px]"></div>
+          <div class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] mt-[-1px]" style="border-top-color: var(--accent-yellow);"></div>
         </div>`;
     } else if (i === 4) {
       pinHtml = `<div class="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform map-pin-content">
-          <div class="bg-primary text-on-primary shadow-lg rounded-full px-4 py-2 flex items-center gap-1 ring-4 ring-surface/50 border-2 border-primary">
-            <span class="material-symbols-outlined text-base">${club.iconName}</span>
-            <span class="font-label-lg text-sm font-bold whitespace-nowrap">${club.name.split(' ')[0]} ${club.name.split(' ')[1]}</span>
+          <div class="shadow-lg rounded-full px-4 py-2 flex items-center gap-1 ring-4 ring-surface/50 border-2" style="background: var(--accent-yellow); color: #131313; border-color: var(--accent-yellow);">
+            <span class="material-symbols-outlined text-base" style="color: #131313;">${club.iconName}</span>
+            <span class="font-label-lg text-sm font-bold whitespace-nowrap" style="color: #131313;">${club.name.split(' ')[0]} ${club.name.split(' ')[1]}</span>
           </div>
-          <div class="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] border-t-primary mt-[-2px]"></div>
+          <div class="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] mt-[-2px]" style="border-top-color: var(--accent-yellow);"></div>
         </div>`;
     } else {
       pinHtml = `<div class="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform map-pin-content">
-          <div class="bg-surface text-on-surface shadow-md rounded-full px-2 py-1 flex items-center gap-1 border border-outline-variant inner-badge">
-            <span class="material-symbols-outlined text-sm text-primary">${club.iconName}</span>
-            <span class="font-label-sm text-xs font-bold">${club.ratingInfo.split(' ')[0]}</span>
-            <span class="material-symbols-outlined text-[12px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+          <div class="shadow-md rounded-full px-2 py-1 flex items-center gap-1 border inner-badge" style="background: var(--accent-yellow); color: #131313; border-color: var(--accent-yellow);">
+            <span class="material-symbols-outlined text-sm" style="color: #131313;">${club.iconName}</span>
+            <span class="font-label-sm text-xs font-bold" style="color: #131313;">${club.ratingInfo.split(' ')[0]}</span>
+            <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1; color: #131313;">star</span>
           </div>
-          <div class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-surface mt-[-1px]"></div>
+          <div class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] mt-[-1px]" style="border-top-color: var(--accent-yellow);"></div>
         </div>`;
     }
 
@@ -422,7 +422,7 @@ function showMapCard(index) {
   if (!container) return;
 
   container.innerHTML = `
-    <div class="bg-surface rounded-xl shadow-lg border border-outline-variant overflow-hidden flex flex-col cursor-pointer transition-transform hover:scale-[1.02]" onclick="navigateTo('club-detail')">
+    <div class="rounded-xl shadow-lg border overflow-hidden flex flex-col cursor-pointer transition-transform hover:scale-[1.02]" onclick="navigateTo('club-detail')" style="background: #131313; border: 1.5px solid var(--accent-yellow); color: white;">
       <div class="h-28 relative bg-surface-container-high">
         <div class="w-full h-full bg-cover bg-center" style="background-image: url('${club.image}')"></div>
         <button class="absolute top-2 right-2 w-8 h-8 bg-surface rounded-full flex items-center justify-center shadow-sm text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-colors" onclick="event.stopPropagation(); window.toggleFavoriteMap(this)">
@@ -430,31 +430,31 @@ function showMapCard(index) {
         </button>
         ${club.badge ? `
         <div class="absolute bottom-2 left-2 flex gap-1">
-          <span class="bg-surface/90 text-on-surface text-[10px] px-2 py-1 rounded-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border border-outline-variant/30">
-            <span class="material-symbols-outlined text-[14px] text-primary">accessible</span> ${club.badge}
+          <span class="text-[10px] px-2 py-1 rounded-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border" style="background: transparent; color: white; border: 1.5px solid white;">
+            <span class="material-symbols-outlined text-[14px]" style="color: white;">accessible</span> ${club.badge}
           </span>
         </div>` : ''}
       </div>
       <div class="p-4 flex flex-col gap-2">
         <div class="flex justify-between items-start">
           <div>
-            <h2 class="font-headline-md text-lg text-on-surface font-bold">${club.name}</h2>
-            <p class="font-body-md text-on-surface-variant text-sm flex items-center gap-1 mt-1">
-              <span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span> ${club.ratingInfo} <span class="text-xs ml-1 font-bold text-primary">${club.price}</span>
+            <h2 class="font-headline-md text-lg font-bold" style="color: white;">${club.name}</h2>
+            <p class="font-body-md text-sm flex items-center gap-1 mt-1" style="color: white;">
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1; color: var(--accent-yellow);">star</span> <span style="color: var(--accent-yellow); font-weight: bold;">${club.ratingInfo.split(' ')[0]}</span> <span class="text-xs ml-1 font-bold" style="color: var(--accent-yellow);">${club.price}</span>
             </p>
           </div>
         </div>
         <div class="flex justify-between items-center mt-2 pt-2 border-t border-outline-variant/40">
-          <div class="flex items-center gap-1 text-on-surface-variant bg-surface-container px-2 py-1 rounded-md">
-            <span class="material-symbols-outlined text-[16px] text-primary">${club.transportIconClass}</span>
+          <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent; color: var(--accent-yellow);">
+            <span class="material-symbols-outlined text-[16px]" style="color: var(--accent-yellow);">${club.transportIconClass}</span>
             <span class="font-label-sm text-xs font-bold">${club.time}</span>
           </div>
-          <div class="flex items-center gap-1 text-on-surface-variant bg-surface-container px-2 py-1 rounded-md">
-            <span class="material-symbols-outlined text-[16px] text-primary">directions_bus</span>
+          <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent; color: var(--accent-yellow);">
+            <span class="material-symbols-outlined text-[16px]" style="color: var(--accent-yellow);">directions_bus</span>
             <span class="font-label-sm text-xs font-bold">5 min</span>
           </div>
-          <div class="flex items-center gap-1 text-on-surface-variant bg-surface-container px-2 py-1 rounded-md">
-            <span class="material-symbols-outlined text-[16px] text-primary">local_parking</span>
+          <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent; color: var(--accent-yellow);">
+            <span class="material-symbols-outlined text-[16px]" style="color: var(--accent-yellow);">local_parking</span>
             <span class="font-label-sm text-xs font-bold">Oui</span>
           </div>
         </div>

@@ -4825,3 +4825,7 @@ button {
   content: '';
   flex: 0 0 70px;
 }
+
+.map-search-custom::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
