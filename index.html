@@ -120,14 +120,12 @@
   <div id="app" class="app-container">
 
     <!-- ==================== SPLASH SCREEN ==================== -->
-    <div id="screen-splash" class="screen active">
-      <div class="splash-content">
-        <div class="splash-logo">
-          <img src="logo/logo_moovio_blanc.png" alt="Moovio" style="max-width: 180px;">
-          <h1 class="splash-title" style="display: none;">Sport<span>Access</span></h1>
-          <p class="splash-subtitle">Le sport accessible à tous</p>
+    <div id="screen-splash" class="screen active" style="background: #000;">
+      <div class="splash-content" style="width: 100%; max-width: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div class="splash-logo" style="width: 100%; margin-bottom: 20px;">
+          <video src="videointro/splash_video.mp4" autoplay muted playsinline style="width: 100%; height: auto; display: block;"></video>
         </div>
-        <div class="splash-loader">
+        <div class="splash-loader" style="width: 200px;">
           <div class="loader-bar"><div class="loader-fill"></div></div>
         </div>
       </div>
