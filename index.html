@@ -828,11 +828,11 @@
         <div id="real-map" class="absolute inset-0 z-0"></div>
         
         <div class="absolute top-20 right-4 z-[1000]">
-          <button class="flex items-center gap-2 rounded-full pl-4 pr-2 py-2 shadow-md border transition-colors focus:outline-none" style="background: #1a1a1a; border-color: var(--accent-yellow);">
+          <button id="pmr-btn" onclick="togglePMR()" class="flex items-center gap-2 rounded-full pl-4 pr-2 py-2 shadow-md border transition-colors focus:outline-none" style="background: #1a1a1a; border-color: var(--accent-yellow);">
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; color: white;">accessible_forward</span>
             <span class="font-label-lg text-sm font-semibold" style="color: white;">PMR Routes</span>
-            <div class="w-10 h-5 bg-surface-variant rounded-full relative ml-1 border border-outline">
-              <div class="w-4 h-4 rounded-full absolute top-[1px] right-[2px] shadow-sm" style="background: white;"></div>
+            <div id="pmr-track" class="w-10 h-5 rounded-full relative ml-1 border transition-colors" style="background: var(--surface-variant); border-color: var(--outline);">
+              <div id="pmr-knob" class="w-4 h-4 rounded-full absolute top-[1px] right-[2px] shadow-sm transition-all" style="background: white;"></div>
             </div>
           </button>
         </div>

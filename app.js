@@ -181,6 +181,49 @@ function toggleFilters() {
 
 // --- Filter Chips ---
 function initFilterChips() {
+  // Attach drag events to all bottom sheets
+  document.querySelectorAll('.bottom-sheet').forEach(sheet => {
+    initBottomSheetDrag(sheet.id);
+  });
+
+  window.pmrActive = true;
+  window.togglePMR = function() {
+    window.pmrActive = !window.pmrActive;
+    const knob = document.getElementById('pmr-knob');
+    const track = document.getElementById('pmr-track');
+    const btn = document.getElementById('pmr-btn');
+    
+    if (window.pmrActive) {
+      knob.style.right = '2px';
+      knob.style.left = 'auto';
+      track.style.background = 'var(--surface-variant)';
+      track.style.borderColor = 'var(--outline)';
+      btn.style.borderColor = 'var(--accent-yellow)';
+    } else {
+      knob.style.left = '2px';
+      knob.style.right = 'auto';
+      track.style.background = 'var(--surface)';
+      track.style.borderColor = 'var(--outline-variant)';
+      btn.style.borderColor = 'var(--border)';
+    }
+
+    // Filter map pins
+    const markers = document.querySelectorAll('.leaflet-marker-icon.leaflet-div-icon');
+    markers.forEach(marker => {
+      // If it's the user marker (has animate-pulse), ignore
+      if (marker.innerHTML.includes('animate-pulse')) return;
+      
+      // Example logic: hide markers 2 and 4 when PMR is off (just simulating filtering)
+      if (!window.pmrActive && (marker.innerHTML.includes('sports_tennis') || marker.innerHTML.includes('golf_course'))) {
+        marker.style.opacity = '0';
+        marker.style.pointerEvents = 'none';
+      } else {
+        marker.style.opacity = '1';
+        marker.style.pointerEvents = 'auto';
+      }
+    });
+  };
+
   // Category chips on home
   document.querySelectorAll('.category-chip').forEach(chip => {
     chip.addEventListener('click', () => {
@@ -430,8 +473,8 @@ function showMapCard(index) {
         </button>
         ${club.badge ? `
         <div class="absolute bottom-2 left-2 flex gap-1">
-          <span class="text-[10px] px-2 py-1 rounded-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border" style="background: transparent; color: white; border: 1.5px solid white;">
-            <span class="material-symbols-outlined text-[14px]" style="color: white;">accessible</span> ${club.badge}
+          <span class="text-[10px] px-2 py-1 rounded-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border" style="background: transparent; color: var(--accent-yellow); border: 1.5px solid var(--accent-yellow);">
+            <span class="material-symbols-outlined text-[14px]" style="color: var(--accent-yellow);">accessible</span> ${club.badge}
           </span>
         </div>` : ''}
       </div>
@@ -446,15 +489,15 @@ function showMapCard(index) {
         </div>
         <div class="flex justify-between items-center mt-2 pt-2 border-t border-outline-variant/40">
           <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent;">
-            <span class="material-symbols-outlined text-[16px]" style="color: var(--accent-yellow);">${club.transportIconClass}</span>
+            <span class="material-symbols-outlined text-[16px]" style="color: white;">${club.transportIconClass}</span>
             <span class="font-label-sm text-xs font-bold" style="color: white;">${club.time}</span>
           </div>
           <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent;">
-            <span class="material-symbols-outlined text-[16px]" style="color: var(--accent-yellow);">directions_bus</span>
+            <span class="material-symbols-outlined text-[16px]" style="color: white;">directions_bus</span>
             <span class="font-label-sm text-xs font-bold" style="color: white;">5 min</span>
           </div>
           <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent;">
-            <span class="material-symbols-outlined text-[16px]" style="color: var(--accent-yellow);">local_parking</span>
+            <span class="material-symbols-outlined text-[16px]" style="color: white;">local_parking</span>
             <span class="font-label-sm text-xs font-bold" style="color: white;">Oui</span>
           </div>
         </div>
