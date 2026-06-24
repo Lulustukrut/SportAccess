@@ -4,10 +4,10 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  --primary: #305cde;
-  --primary-light: #305cde;
-  --primary-dark: #305cde;
-  --primary-gradient: #305cde;
+  --primary: #d4d12c;
+  --primary-light: #d4d12c;
+  --primary-dark: #b8b61c;
+  --primary-gradient: #d4d12c;
   --secondary: #e05ae8;
   --secondary-light: #e05ae8;
   --accent-pink: #e05ae8;
@@ -26,8 +26,8 @@
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
-  --glass: rgba(48, 92, 222, 0.06);
-  --glass-border: rgba(48, 92, 222, 0.1);
+  --glass: rgba(212, 209, 44, 0.06);
+  --glass-border: rgba(212, 209, 44, 0.1);
   --radius: 8px;
   --radius-sm: 4px;
   --radius-lg: 24px;
@@ -463,7 +463,7 @@ button {
 
 .btn-primary {
   background: var(--primary-gradient);
-  color: white;
+  color: #131313;
   border: none;
   padding: 16px 32px;
   border-radius: 32px;
@@ -1134,8 +1134,8 @@ button {
   align-items: center;
   gap: 14px;
   padding: 18px;
-  background: linear-gradient(135deg, rgba(255, 85, 69, 0.12), rgba(255, 184, 116, 0.08));
-  border: 1.5px solid rgba(255, 85, 69, 0.25);
+  background: linear-gradient(135deg, rgba(212, 209, 44, 0.12), rgba(212, 209, 44, 0.05));
+  border: 1.5px solid rgba(212, 209, 44, 0.25);
   border-radius: var(--radius);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1244,7 +1244,7 @@ button {
 .goal-day.done {
   background: var(--primary-gradient);
   border-color: transparent;
-  color: white;
+  color: #131313;
 }
 
 /* --- Booking Cards --- */
@@ -1271,6 +1271,7 @@ button {
   border-radius: var(--radius-sm);
   padding: 8px 12px;
   min-width: 56px;
+  color: #131313;
 }
 
 .booking-month {
@@ -1389,7 +1390,7 @@ button {
 
 .btn-join {
   background: var(--primary-gradient);
-  color: white;
+  color: #131313;
 }
 
 .btn-like {
