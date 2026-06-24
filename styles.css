@@ -4815,7 +4815,7 @@ button {
   transform: scaleX(-1);
 }
 .pack-mascot.tigresse::after { left: 0; width: 70%; }
-.pack-mascot.tigresse.hidden-mascot { transform: translateX(-60px) translateY(30px) rotate(35deg); }
+.pack-mascot.tigresse.hidden-mascot { transform: translateX(-45px) translateY(30px) rotate(35deg); }
 
 .pack-mascot:not(.hidden-mascot) .mascot-bubble {
   opacity: 1;
