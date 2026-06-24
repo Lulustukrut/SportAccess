@@ -440,22 +440,22 @@ function showMapCard(index) {
           <div>
             <h2 class="font-headline-md text-lg font-bold" style="color: white;">${club.name}</h2>
             <p class="font-body-md text-sm flex items-center gap-1 mt-1" style="color: white;">
-              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1; color: var(--accent-yellow);">star</span> <span style="color: var(--accent-yellow); font-weight: bold;">${club.ratingInfo.split(' ')[0]}</span> <span class="text-xs ml-1 font-bold" style="color: var(--accent-yellow);">${club.price}</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1; color: var(--accent-yellow);">star</span> <span style="color: var(--accent-yellow); font-weight: bold;">${club.ratingInfo.split(' ')[0]}</span> <span class="text-xs ml-1 font-bold" style="color: white;">${club.price}</span>
             </p>
           </div>
         </div>
         <div class="flex justify-between items-center mt-2 pt-2 border-t border-outline-variant/40">
-          <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent; color: var(--accent-yellow);">
+          <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent;">
             <span class="material-symbols-outlined text-[16px]" style="color: var(--accent-yellow);">${club.transportIconClass}</span>
-            <span class="font-label-sm text-xs font-bold">${club.time}</span>
+            <span class="font-label-sm text-xs font-bold" style="color: white;">${club.time}</span>
           </div>
-          <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent; color: var(--accent-yellow);">
+          <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent;">
             <span class="material-symbols-outlined text-[16px]" style="color: var(--accent-yellow);">directions_bus</span>
-            <span class="font-label-sm text-xs font-bold">5 min</span>
+            <span class="font-label-sm text-xs font-bold" style="color: white;">5 min</span>
           </div>
-          <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent; color: var(--accent-yellow);">
+          <div class="flex items-center gap-1 px-2 py-1 rounded-md" style="background: transparent;">
             <span class="material-symbols-outlined text-[16px]" style="color: var(--accent-yellow);">local_parking</span>
-            <span class="font-label-sm text-xs font-bold">Oui</span>
+            <span class="font-label-sm text-xs font-bold" style="color: white;">Oui</span>
           </div>
         </div>
       </div>
