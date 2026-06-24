@@ -1007,7 +1007,7 @@ function openPackDetail(packId) {
 
   // Header
   document.getElementById('pack-detail-category').textContent = pack.category;
-  document.getElementById('pack-detail-badge').textContent = pack.badge;
+  // document.getElementById('pack-detail-badge').textContent = pack.badge;
   document.getElementById('pack-detail-title').textContent = pack.title;
   
   // Quick Info

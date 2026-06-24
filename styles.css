@@ -749,6 +749,7 @@ button {
   min-width: 260px;
   background: var(--bg-card);
   border-radius: var(--radius-lg);
+  position: relative;
   overflow: hidden;
   border: 1.5px solid var(--border);
   cursor: pointer;
@@ -985,8 +986,10 @@ button {
   position: absolute;
   top: 16px;
   left: -32px;
-  background: var(--accent-pink);
-  color: #000;
+  background: rgba(224, 90, 232, 0.85); /* Glass effect with accent pink */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
   padding: 4px 32px;
   transform: rotate(-45deg);
   font-size: 0.75rem;
