@@ -92,20 +92,26 @@ button {
   max-width: 430px;
   height: 100vh;
   height: 100dvh;
-  background-image: url('fond/Design%20sans%20titre.png');
-  background-size: cover;
-  background-position: center;
-  /* background-attachment supprimé pour que cover s'applique à l'app et non au navigateur entier */
+  background: var(--bg);
   overflow: hidden;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
   z-index: 1;
-  /* FIX WebKit border-radius clipping bug for absolute/backdrop elements */
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  isolation: isolate;
 }
 
-/* Flou dispersif derrière le contenu, mais à l'intérieur de l'app */
+/* Image de fond placée en layer profond pour assurer que le flou s'applique dessus */
 .app-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('fond/Design%20sans%20titre.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Flou dispersif appliqué par-dessus l'image */
+.app-container::after {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -121,7 +127,7 @@ button {
     height: 92vh;
     border-radius: 40px;
     border: 2px solid var(--border-light);
-    clip-path: inset(0 round 40px); /* Forcer le découpage strict pour empêcher tout débordement du flou */
+    clip-path: inset(0 round 40px); /* Forcer le découpage strict pour empêcher tout débordement */
   }
 }
 
