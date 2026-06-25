@@ -192,6 +192,7 @@ function finishOnboarding() {
   state.currentScreen = 'home';
   state.history = [];
   updateTabBar('home');
+  setupHomeMascot();
 }
 
 // --- Filters ---
@@ -1148,11 +1149,14 @@ let homeMascotObserver = null;
 let homeMascotTimeout = null;
 
 function setupHomeMascot() {
-  const tigrouMascot = document.getElementById('home-mascot-tigrou');
-  const tigresseMascot = document.getElementById('home-mascot-tigresse');
-  const triggerSection = document.querySelector('#screen-home .section:nth-of-type(3)'); // Handisport section (below fold)
+  const mascot = document.getElementById('home-mascot');
+  const triggerSection = document.querySelector('#screen-home .section:nth-of-type(4)');
+  const scrollContainer = document.getElementById('home-scroll-container');
   
-  if (!triggerSection) return;
+  if (!mascot || !triggerSection || !scrollContainer) return;
+  
+  // Make sure it's hidden initially
+  mascot.classList.add('hidden-mascot');
   
   let isTigrou = false;
   if (state.user && state.user.avatar) {
@@ -1162,45 +1166,32 @@ function setupHomeMascot() {
     isTigrou = avatarRadio && avatarRadio.value === 'tigrou';
   }
   
-  let activeMascot = isTigrou ? tigrouMascot : tigresseMascot;
-  let inactiveMascot = isTigrou ? tigresseMascot : tigrouMascot;
+  mascot.className = 'home-mascot hidden-mascot ' + (isTigrou ? 'tigrou' : 'tigresse');
   
-  if (!activeMascot) return;
-  
-  // Make sure inactive is hidden and active is block
-  if (inactiveMascot) inactiveMascot.style.display = 'none';
-  if (activeMascot.style.display === 'none') {
-    activeMascot.style.display = 'block';
+  // Update bubble class based on side
+  const bubble = mascot.querySelector('.mascot-bubble');
+  if (bubble) {
+    bubble.className = 'mascot-bubble bubble-right';
   }
-  // Ensure it has the hidden class initially
-  activeMascot.classList.add('hidden-mascot');
-  
-  // Force a browser reflow so the transition is not skipped when changing from display: none
-  void activeMascot.offsetWidth;
   
   // Clear any existing observer/timeout
-  if (homeMascotObserver) homeMascotObserver.disconnect();
-  if (window.homeMascotTimeout) clearTimeout(window.homeMascotTimeout);
+  if (homeMascotObserver) {
+    homeMascotObserver.disconnect();
+    homeMascotObserver = null;
+  }
   
   // Trigger on scroll (Intersection Observer)
-  const scrollContainer = document.getElementById('home-scroll-container');
   homeMascotObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
       setTimeout(() => {
-        activeMascot.classList.remove('hidden-mascot');
+        mascot.classList.remove('hidden-mascot');
       }, 100);
       homeMascotObserver.disconnect();
-      if (window.homeMascotTimeout) clearTimeout(window.homeMascotTimeout);
+      homeMascotObserver = null;
     }
-  }, { root: scrollContainer, threshold: 0 });
+  }, { root: scrollContainer, threshold: 0.5 });
   
   homeMascotObserver.observe(triggerSection);
-  
-  // Trigger on hesitation (e.g. 5 seconds fallback)
-  window.homeMascotTimeout = setTimeout(() => {
-    activeMascot.classList.remove('hidden-mascot');
-    if (homeMascotObserver) homeMascotObserver.disconnect();
-  }, 5000);
 }
 
 function setupPackMascot() {
@@ -1265,4 +1256,4 @@ function closeModal() {
   if (packModal) packModal.classList.remove('open');
 }
 
-setupHomeMascot();
+// setupHomeMascot();
