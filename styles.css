@@ -4487,13 +4487,13 @@ button {
 .home-mascot {
   position: fixed;
   bottom: 100px;
-  width: 140px;
-  height: 180px;
+  width: 120px;
+  height: 150px;
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
   cursor: pointer;
-  z-index: 50;
+  z-index: 101;
   opacity: 1;
   transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
@@ -4530,7 +4530,7 @@ button {
   width: 70%;
 }
 .home-mascot.tigrou.hidden-mascot {
-  transform: translateX(-150px) translateY(30px) rotate(35deg);
+  transform: translateX(-100px) translateY(30px) rotate(35deg);
 }
 
 .home-mascot.tigresse {
@@ -4548,7 +4548,7 @@ button {
   width: 70%;
 }
 .home-mascot.tigresse.hidden-mascot {
-  transform: translateX(-150px) translateY(30px) rotate(35deg);
+  transform: translateX(-100px) translateY(30px) rotate(35deg);
 }
 
 /* --- Mascot Speech Bubble --- */
