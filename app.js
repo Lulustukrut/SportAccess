@@ -1233,5 +1233,5 @@ function closeModal() {
   const packModal = document.getElementById('pack-modal');
   if (packModal) packModal.classList.remove('open');
 }
-s e t u p H o m e M a s c o t ( ) ;  
- 
+
+setupHomeMascot();
