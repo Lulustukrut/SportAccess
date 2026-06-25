@@ -957,6 +957,15 @@ function completeSignup() {
   const tigrouMascot = document.getElementById('home-mascot-tigrou');
   const tigresseMascot = document.getElementById('home-mascot-tigresse');
   
+  if (tigrouMascot && tigresseMascot) {
+    if (homeMascotClass === 'tigrou') {
+      tigrouMascot.style.display = 'block';
+      tigresseMascot.style.display = 'none';
+    } else {
+      tigrouMascot.style.display = 'none';
+      tigresseMascot.style.display = 'block';
+    }
+  }
   
   const signup = document.getElementById('screen-signup');
   signup.classList.add('exiting');
@@ -1139,13 +1148,11 @@ let homeMascotObserver = null;
 let homeMascotTimeout = null;
 
 function setupHomeMascot() {
-  const mascot = document.getElementById('home-mascot');
+  const tigrouMascot = document.getElementById('home-mascot-tigrou');
+  const tigresseMascot = document.getElementById('home-mascot-tigresse');
   const triggerSection = document.querySelector('#screen-home .section:nth-of-type(4)'); // Handisport section (below fold)
   
-  if (!mascot || !triggerSection) return;
-  
-  // Make sure it's hidden initially
-  mascot.classList.add('hidden-mascot');
+  if (!triggerSection) return;
   
   let isTigrou = false;
   if (state.user && state.user.avatar) {
@@ -1154,21 +1161,31 @@ function setupHomeMascot() {
     const avatarRadio = document.querySelector('input[name="avatar"]:checked');
     isTigrou = avatarRadio && avatarRadio.value === 'tigrou';
   }
-  mascot.className = 'home-mascot hidden-mascot ' + (isTigrou ? 'tigrou' : 'tigresse');
+  
+  let activeMascot = isTigrou ? tigrouMascot : tigresseMascot;
+  let inactiveMascot = isTigrou ? tigresseMascot : tigrouMascot;
+  
+  if (!activeMascot) return;
+  
+  // Make sure inactive is hidden and active is block
+  if (inactiveMascot) inactiveMascot.style.display = 'none';
+  if (activeMascot.style.display === 'none') {
+    activeMascot.style.display = 'block';
+  }
+  // Ensure it has the hidden class initially
+  activeMascot.classList.add('hidden-mascot');
   
   // Clear any existing observer/timeout
   if (homeMascotObserver) homeMascotObserver.disconnect();
-  if (homeMascotTimeout) clearTimeout(homeMascotTimeout);
   
   // Trigger on scroll (Intersection Observer)
   const scrollContainer = document.getElementById('home-scroll-container');
   homeMascotObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
       setTimeout(() => {
-        mascot.classList.remove('hidden-mascot');
+        activeMascot.classList.remove('hidden-mascot');
       }, 100);
       homeMascotObserver.disconnect();
-      if (homeMascotTimeout) clearTimeout(homeMascotTimeout);
     }
   }, { root: scrollContainer, threshold: 0.1 });
   
