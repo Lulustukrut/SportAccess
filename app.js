@@ -1140,9 +1140,9 @@ let homeMascotTimeout = null;
 
 function setupHomeMascot() {
   const mascot = document.getElementById('home-mascot');
-  const popularSection = document.querySelector('#screen-home .section:nth-of-type(3)'); // Top Coaches section
+  const triggerSection = document.querySelector('#screen-home .section:nth-of-type(4)'); // Handisport section (below fold)
   
-  if (!mascot || !popularSection) return;
+  if (!mascot || !triggerSection) return;
   
   // Make sure it's hidden initially
   mascot.classList.add('hidden-mascot');
@@ -1156,21 +1156,20 @@ function setupHomeMascot() {
   if (homeMascotTimeout) clearTimeout(homeMascotTimeout);
   
   // Trigger on scroll (Intersection Observer)
+  const scrollContainer = document.getElementById('home-scroll-container');
   homeMascotObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
-      mascot.classList.remove('hidden-mascot');
+      setTimeout(() => {
+        mascot.classList.remove('hidden-mascot');
+      }, 100);
       homeMascotObserver.disconnect();
       if (homeMascotTimeout) clearTimeout(homeMascotTimeout);
     }
-  }, { threshold: 0.1 });
+  }, { root: scrollContainer, threshold: 0.1 });
   
-  homeMascotObserver.observe(popularSection);
+  homeMascotObserver.observe(triggerSection);
   
-  // Trigger on hesitation (e.g. 5 seconds)
-  homeMascotTimeout = setTimeout(() => {
-    mascot.classList.remove('hidden-mascot');
-    if (homeMascotObserver) homeMascotObserver.disconnect();
-  }, 5000);
+  // We rely entirely on the scroll observer, no timeout.
 }
 
 function setupPackMascot() {
@@ -1198,13 +1197,16 @@ function setupPackMascot() {
   if (packMascotTimeout) clearTimeout(packMascotTimeout);
   
   // Trigger on scroll (Intersection Observer)
+  const scrollContainer = mascot.closest('.screen-scroll');
   packMascotObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
-      mascot.classList.remove('hidden-mascot');
+      setTimeout(() => {
+        mascot.classList.remove('hidden-mascot');
+      }, 100);
       packMascotObserver.disconnect();
       if (packMascotTimeout) clearTimeout(packMascotTimeout);
     }
-  }, { threshold: 0.5 });
+  }, { root: scrollContainer, threshold: 0.5 });
   
   packMascotObserver.observe(conditionsSection);
   
