@@ -4530,7 +4530,7 @@ button {
   width: 70%;
 }
 .home-mascot.tigrou.hidden-mascot {
-  transform: translateX(-100px) translateY(30px) rotate(35deg);
+  transform: translateX(-150px) translateY(30px) rotate(35deg);
 }
 
 .home-mascot.tigresse {
@@ -4548,7 +4548,7 @@ button {
   width: 70%;
 }
 .home-mascot.tigresse.hidden-mascot {
-  transform: translateX(-100px) translateY(30px) rotate(35deg);
+  transform: translateX(-150px) translateY(30px) rotate(35deg);
 }
 
 /* --- Mascot Speech Bubble --- */

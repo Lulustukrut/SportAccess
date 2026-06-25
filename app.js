@@ -1141,7 +1141,7 @@ let homeMascotTimeout = null;
 function setupHomeMascot() {
   const tigrouMascot = document.getElementById('home-mascot-tigrou');
   const tigresseMascot = document.getElementById('home-mascot-tigresse');
-  const popularSection = document.querySelector('#screen-home .section:nth-of-type(2)'); // Top Coaches section
+  const popularSection = document.querySelector('#screen-home .section:nth-of-type(3)'); // Top Coaches section
   
   if (!popularSection) return;
   
