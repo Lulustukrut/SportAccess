@@ -1043,6 +1043,7 @@ button {
   display: flex;
   gap: 14px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 4px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -4484,8 +4485,8 @@ button {
 
 /* --- Home Mascot --- */
 .home-mascot {
-  position: absolute;
-  bottom: 120px;
+  position: fixed;
+  bottom: 100px;
   width: 140px;
   height: 180px;
   background-size: contain;
