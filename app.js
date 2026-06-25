@@ -1147,8 +1147,13 @@ function setupHomeMascot() {
   // Make sure it's hidden initially
   mascot.classList.add('hidden-mascot');
   
-  const avatarRadio = document.querySelector('input[name="avatar"]:checked');
-  const isTigrou = avatarRadio && avatarRadio.value === 'tigrou';
+  let isTigrou = false;
+  if (state.user && state.user.avatar) {
+    isTigrou = state.user.avatar.includes('tigrou');
+  } else {
+    const avatarRadio = document.querySelector('input[name="avatar"]:checked');
+    isTigrou = avatarRadio && avatarRadio.value === 'tigrou';
+  }
   mascot.className = 'home-mascot hidden-mascot ' + (isTigrou ? 'tigrou' : 'tigresse');
   
   // Clear any existing observer/timeout
@@ -1182,8 +1187,13 @@ function setupPackMascot() {
   mascot.classList.add('hidden-mascot');
   
   // Set the right class based on chosen avatar
-  const avatarRadio = document.querySelector('input[name="avatar"]:checked');
-  const isTigrou = avatarRadio && avatarRadio.value === 'tigrou';
+  let isTigrou = false;
+  if (state.user && state.user.avatar) {
+    isTigrou = state.user.avatar.includes('tigrou');
+  } else {
+    const avatarRadio = document.querySelector('input[name="avatar"]:checked');
+    isTigrou = avatarRadio && avatarRadio.value === 'tigrou';
+  }
   mascot.className = 'pack-mascot hidden-mascot ' + (isTigrou ? 'tigrou' : 'tigresse');
   
   // Update bubble class based on side
