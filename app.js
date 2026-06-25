@@ -389,7 +389,7 @@ window.mapClubsData = [
     ratingInfo: '4.5',
     price: '22€',
     badge: '',
-    image: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&q=80&w=400',
+    image: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=400',
     time: '12 min',
     transportIconClass: 'directions_bus',
     iconName: 'golf_course'
