@@ -1139,24 +1139,17 @@ let homeMascotObserver = null;
 let homeMascotTimeout = null;
 
 function setupHomeMascot() {
-  const tigrouMascot = document.getElementById('home-mascot-tigrou');
-  const tigresseMascot = document.getElementById('home-mascot-tigresse');
+  const mascot = document.getElementById('home-mascot');
   const popularSection = document.querySelector('#screen-home .section:nth-of-type(3)'); // Top Coaches section
   
-  if (!popularSection) return;
+  if (!mascot || !popularSection) return;
+  
+  // Make sure it's hidden initially
+  mascot.classList.add('hidden-mascot');
   
   const avatarRadio = document.querySelector('input[name="avatar"]:checked');
   const isTigrou = avatarRadio && avatarRadio.value === 'tigrou';
-  
-  let activeMascot = isTigrou ? tigrouMascot : tigresseMascot;
-  let inactiveMascot = isTigrou ? tigresseMascot : tigrouMascot;
-  
-  if (!activeMascot) return;
-  
-  // Reset visibility
-  if (inactiveMascot) inactiveMascot.style.display = 'none';
-  activeMascot.style.display = 'block';
-  activeMascot.classList.add('hidden-mascot');
+  mascot.className = 'home-mascot hidden-mascot ' + (isTigrou ? 'tigrou' : 'tigresse');
   
   // Clear any existing observer/timeout
   if (homeMascotObserver) homeMascotObserver.disconnect();
@@ -1165,7 +1158,7 @@ function setupHomeMascot() {
   // Trigger on scroll (Intersection Observer)
   homeMascotObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
-      activeMascot.classList.remove('hidden-mascot');
+      mascot.classList.remove('hidden-mascot');
       homeMascotObserver.disconnect();
       if (homeMascotTimeout) clearTimeout(homeMascotTimeout);
     }
@@ -1175,7 +1168,7 @@ function setupHomeMascot() {
   
   // Trigger on hesitation (e.g. 5 seconds)
   homeMascotTimeout = setTimeout(() => {
-    activeMascot.classList.remove('hidden-mascot');
+    mascot.classList.remove('hidden-mascot');
     if (homeMascotObserver) homeMascotObserver.disconnect();
   }, 5000);
 }
