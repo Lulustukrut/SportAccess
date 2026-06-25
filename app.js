@@ -1175,6 +1175,9 @@ function setupHomeMascot() {
   // Ensure it has the hidden class initially
   activeMascot.classList.add('hidden-mascot');
   
+  // Force a browser reflow so the transition is not skipped when changing from display: none
+  void activeMascot.offsetWidth;
+  
   // Clear any existing observer/timeout
   if (homeMascotObserver) homeMascotObserver.disconnect();
   
