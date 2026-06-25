@@ -3502,6 +3502,22 @@ button {
   color: var(--primary-light);
 }
 
+.offer-card.discovery {
+  background: var(--accent-yellow);
+  color: #000;
+  border-color: var(--accent-yellow);
+}
+
+.offer-card.discovery h3,
+.offer-card.discovery p {
+  color: #000;
+}
+
+.offer-card.discovery .offer-badge {
+  background: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
 .offer-card.student .offer-badge {
   background: rgba(255, 255, 255, 0.15);
   color: white;
@@ -3575,8 +3591,8 @@ button {
 }
 
 .pack-card.popular {
-  border-color: var(--primary);
-  background: rgba(255, 85, 69, 0.08);
+  border-color: var(--accent-yellow);
+  background: rgba(204, 255, 0, 0.08);
 }
 
 .popular-badge {
@@ -3584,12 +3600,17 @@ button {
   top: -8px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.6rem;
-  background: var(--primary-gradient);
-  padding: 2px 8px;
+  font-size: 0.65rem;
+  background: var(--accent-yellow);
+  color: black;
+  padding: 2px 10px;
   border-radius: 32px;
   white-space: nowrap;
-  font-weight: 600;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .pack-icon {
@@ -3616,6 +3637,10 @@ button {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--primary-light);
+}
+
+.pack-card.popular .pack-price {
+  color: white;
 }
 
 .pack-price s {
@@ -3943,7 +3968,7 @@ button {
 }
 
 .msg-item.unread {
-  border-color: rgba(255, 85, 69, 0.3);
+  border-color: var(--accent-yellow);
 }
 
 .msg-item:active {
@@ -3995,7 +4020,7 @@ button {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--primary);
+  background: var(--accent-yellow);
   flex-shrink: 0;
   align-self: center;
 }
