@@ -2333,7 +2333,11 @@ button {
   margin-bottom: 24px;
 }
 
-#screen-coach-detail .detail-section,
+#screen-coach-agathe .detail-section,
+#screen-coach-anais .detail-section,
+#screen-coach-axel .detail-section,
+#screen-coach-lucian .detail-section,
+#screen-coach-orlane .detail-section,
 #screen-booking .detail-section {
   padding: 0 24px;
 }
