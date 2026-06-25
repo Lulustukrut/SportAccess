@@ -400,7 +400,7 @@
                 </div>
               </div>
             </div>
-            <div class="club-card" onclick="navigateTo('club-detail')">
+            <div class="club-card" onclick="navigateTo('tennis-detail')">
               <div class="pack-banner">Bon Plan</div>
               <div class="club-card-img" style="background-image: url('images/club_tennis.png'); background-size: cover; background-position: center;">
                 <span class="club-card-sport"><i class="ph ph-tennis-ball"></i> Tennis</span>
@@ -419,7 +419,7 @@
                 </div>
               </div>
             </div>
-            <div class="club-card" onclick="navigateTo('club-detail')">
+            <div class="club-card" onclick="navigateTo('bodymind-detail')">
               <div class="pack-banner">Bon Plan</div>
               <div class="club-card-img" style="background-image: url('images/club_pilates.png'); background-size: cover; background-position: center;">
                 <span class="club-card-sport"><i class="ph ph-person"></i> Pilates</span>
@@ -1191,6 +1191,655 @@
         <div class="sticky-price">
           <span class="sticky-from">À partir de</span>
           <span class="sticky-amount">12€<span>/séance</span></span>
+        </div>
+        <button class="btn-primary btn-book" onclick="navigateTo('booking')">Réserver</button>
+      </div>
+    </div>
+
+    <!-- ==================== TENNIS DETAIL ==================== -->
+    <div id="screen-tennis-detail" class="screen">
+      <div class="screen-scroll">
+        <div class="detail-hero" style="background-image: url('images/club_tennis.png'); background-size: cover; background-position: center;">
+          <div class="detail-hero-overlay">
+            <button class="back-btn glass-btn" onclick="goBack()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="detail-hero-actions">
+              <button class="glass-btn"><i class="ph ph-heart"></i></button>
+              <button class="glass-btn">↗</button>
+            </div>
+          </div>
+          <div class="detail-hero-content">
+            <span class="detail-tag"><i class="ph ph-tennis-ball"></i> Tennis • Padel • Squash</span>
+            <h1>Paris Tennis Club</h1>
+            <div class="detail-meta">
+              <span><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i> 4.6 (89 avis)</span>
+              <span>•</span>
+              <span><i class="ph-fill ph-map-pin"></i> 1.2km</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="detail-gallery">
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=300&h=200&fit=crop'); background-size: cover; background-position: center;"></div>
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=300&h=200&fit=crop'); background-size: cover; background-position: center;"></div>
+          <div class="gallery-item gallery-more">+8</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="detail-quick-info">
+          <div class="quick-info-item">
+            <span class="qi-icon"><i class="ph ph-coins"></i></span>
+            <span class="qi-label">À partir de</span>
+            <span class="qi-value">18€</span>
+          </div>
+          <div class="quick-info-item">
+            <span class="qi-icon"><i class="ph ph-calendar-blank"></i></span>
+            <span class="qi-label">Horaires</span>
+            <span class="qi-value">8h-23h</span>
+          </div>
+          <div class="quick-info-item">
+            <span class="qi-icon"><i class="ph ph-users"></i></span>
+            <span class="qi-label">Capacité</span>
+            <span class="qi-value">4 courts</span>
+          </div>
+          <div class="quick-info-item">
+            <span class="qi-icon"><i class="ph ph-tennis-ball"></i></span>
+            <span class="qi-label">Accès</span>
+            <span class="qi-value">Libre</span>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="detail-tabs">
+          <button class="detail-tab active" data-tab="tennis-info">Infos</button>
+          <button class="detail-tab" data-tab="tennis-schedule">Planning</button>
+          <button class="detail-tab" data-tab="tennis-reviews">Avis</button>
+          <button class="detail-tab" data-tab="tennis-coaches">Coachs</button>
+        </div>
+
+        <!-- Tab: Info -->
+        <div class="detail-tab-content active" id="tab-tennis-info">
+          <div class="detail-section">
+            <h3>À propos</h3>
+            <p>Le Paris Tennis Club est un club moderne situé sur le Boulevard Voltaire. Avec 4 courts indoor et 2 courts de padel, nous proposons des cours pour tous les niveaux, du débutant au compétiteur. Ambiance conviviale garantie !</p>
+          </div>
+
+          <div class="detail-section">
+            <h3>Équipements</h3>
+            <div class="amenities-grid">
+              <div class="amenity"><i class="ph ph-tennis-ball"></i> Raquettes disponibles</div>
+              <div class="amenity"><i class="ph ph-shower"></i> Douches</div>
+              <div class="amenity"><i class="ph ph-lock-key"></i> Casiers</div>
+              <div class="amenity"><i class="ph-fill ph-parking"></i>️ Parking</div>
+              <div class="amenity"><i class="ph ph-baseball"></i> Machine à balles</div>
+              <div class="amenity"><i class="ph ph-storefront"></i> Boutique pro</div>
+              <div class="amenity"><i class="ph ph-coffee"></i> Distributeur boissons</div>
+              <div class="amenity"><i class="ph ph-wifi-high"></i> Wi-Fi</div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Tarifs</h3>
+            <div class="pricing-table">
+              <div class="price-row">
+                <span>Court 1h (<span style="color: var(--accent-yellow);">simple</span>)</span>
+                <span class="price-amount">18€</span>
+              </div>
+              <div class="price-row">
+                <span>Court 1h (<span style="color: var(--accent-yellow);">double</span>)</span>
+                <span class="price-amount">24€</span>
+              </div>
+              <div class="price-row">
+                <span>Pack <span style="color: var(--accent-yellow);">10</span> heures</span>
+                <span class="price-amount"><s>180€</s> 149€</span>
+              </div>
+              <div class="price-row">
+                <span>Cours particulier (1h)</span>
+                <span class="price-amount">55€</span>
+              </div>
+              <div class="price-row student">
+                <span><i class="ph-fill ph-graduation-cap"></i> Tarif étudiant (<span style="color: var(--accent-yellow);">-25%</span>)</span>
+                <span class="price-amount">13,50€/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Schedule -->
+        <div class="detail-tab-content" id="tab-tennis-schedule">
+          <div class="schedule-days">
+            <button class="schedule-day active">
+              <span class="sd-name">Lun</span>
+              <span class="sd-num">23</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Mar</span>
+              <span class="sd-num">24</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Mer</span>
+              <span class="sd-num">25</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Jeu</span>
+              <span class="sd-num">26</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Ven</span>
+              <span class="sd-num">27</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Sam</span>
+              <span class="sd-num">28</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Dim</span>
+              <span class="sd-num">29</span>
+            </button>
+          </div>
+          <div class="schedule-list">
+            <div class="schedule-slot" onclick="navigateTo('booking')">
+              <div class="slot-time">
+                <span class="slot-hour">09:00</span>
+                <span class="slot-duration">1h</span>
+              </div>
+              <div class="slot-info">
+                <h4>Tennis Libre</h4>
+                <p>Court 1 • Tous niveaux</p>
+                <div class="slot-meta">
+                  <span class="slot-spots available">6 créneaux dispo</span>
+                </div>
+              </div>
+              <button class="btn-book-slot">Réserver</button>
+            </div>
+            <div class="schedule-slot" onclick="navigateTo('booking')">
+              <div class="slot-time">
+                <span class="slot-hour">10:30</span>
+                <span class="slot-duration">1h30</span>
+              </div>
+              <div class="slot-info">
+                <h4>Cours Collectif</h4>
+                <p>Alex R. • Débutant</p>
+                <div class="slot-meta">
+                  <span class="slot-spots available">4 places dispo</span>
+                </div>
+              </div>
+              <button class="btn-book-slot">Réserver</button>
+            </div>
+            <div class="schedule-slot" onclick="navigateTo('booking')">
+              <div class="slot-time">
+                <span class="slot-hour">14:00</span>
+                <span class="slot-duration">1h</span>
+              </div>
+              <div class="slot-info">
+                <h4>Padel Match</h4>
+                <p>Court Padel 1 • Intermédiaire</p>
+                <div class="slot-meta">
+                  <span class="slot-spots few">2 places dispo</span>
+                </div>
+              </div>
+              <button class="btn-book-slot">Réserver</button>
+            </div>
+            <div class="schedule-slot" onclick="navigateTo('booking')">
+              <div class="slot-time">
+                <span class="slot-hour">18:00</span>
+                <span class="slot-duration">1h</span>
+              </div>
+              <div class="slot-info">
+                <h4>Tennis Compétition</h4>
+                <p>Alex R. • Avancé</p>
+                <div class="slot-meta">
+                  <span class="slot-spots full">Complet • Liste d'attente</span>
+                </div>
+              </div>
+              <button class="btn-book-slot waitlist">Liste d'attente</button>
+            </div>
+            <div class="schedule-slot" onclick="navigateTo('booking')">
+              <div class="slot-time">
+                <span class="slot-hour">20:00</span>
+                <span class="slot-duration">1h</span>
+              </div>
+              <div class="slot-info">
+                <h4>Tennis Libre</h4>
+                <p>Court 3 • Tous niveaux</p>
+                <div class="slot-meta">
+                  <span class="slot-spots available">8 créneaux dispo</span>
+                </div>
+              </div>
+              <button class="btn-book-slot">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Reviews -->
+        <div class="detail-tab-content" id="tab-tennis-reviews">
+          <div class="reviews-summary">
+            <div class="reviews-score">
+              <span class="score-number">4.6</span>
+              <div class="score-stars"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph ph-star" style="color: var(--text-muted);"></i></div>
+              <span class="score-count">89 avis</span>
+            </div>
+            <div class="score-bars">
+              <div class="score-bar-row"><span>5<i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></span><div class="score-bar"><div class="score-fill" style="width:60%"></div></div><span>53</span></div>
+              <div class="score-bar-row"><span>4<i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></span><div class="score-bar"><div class="score-fill" style="width:25%"></div></div><span>22</span></div>
+              <div class="score-bar-row"><span>3<i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></span><div class="score-bar"><div class="score-fill" style="width:10%"></div></div><span>9</span></div>
+              <div class="score-bar-row"><span>2<i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></span><div class="score-bar"><div class="score-fill" style="width:4%"></div></div><span>4</span></div>
+              <div class="score-bar-row"><span>1<i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></span><div class="score-bar"><div class="score-fill" style="width:1%"></div></div><span>1</span></div>
+            </div>
+          </div>
+          <div class="review-tags">
+            <span class="review-tag">Terrains <i class="ph-fill ph-star"></i></span>
+            <span class="review-tag">Ambiance <i class="ph-fill ph-star"></i></span>
+            <span class="review-tag">Matériel <i class="ph-fill ph-sparkle"></i></span>
+          </div>
+          <div class="reviews-list">
+            <div class="review-item">
+              <div class="review-header">
+                <div class="review-avatar">L</div>
+                <div class="review-author">
+                  <h4>Lucas P.</h4>
+                  <span>Il y a 5 jours</span>
+                </div>
+                <div class="review-stars"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></div>
+              </div>
+              <p class="review-text">Super club ! Les courts sont en excellent état et le coach Alex est vraiment pédagogue. Le padel est top aussi !</p>
+            </div>
+            <div class="review-item">
+              <div class="review-header">
+                <div class="review-avatar">E</div>
+                <div class="review-author">
+                  <h4>Emma V.</h4>
+                  <span>Il y a 2 semaines</span>
+                </div>
+                <div class="review-stars"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph ph-star" style="color: var(--text-muted);"></i></div>
+              </div>
+              <p class="review-text">Bon club dans l'ensemble, les installations sont propres. J'aurais aimé plus de créneaux disponibles le soir.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Coaches -->
+        <div class="detail-tab-content" id="tab-tennis-coaches">
+          <div class="coach-detail-card" onclick="navigateTo('coach-detail')">
+            <div class="coach-detail-avatar" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face'); background-size: cover; background-position: center;"></div>
+            <div class="coach-detail-info">
+              <h4>Alex Renaud</h4>
+              <p class="coach-detail-specialty">Tennis • Padel • Préparation physique</p>
+              <div class="coach-detail-certs">
+                <span class="cert-badge"><i class="ph-fill ph-graduation-cap"></i> Diplômé FFT</span>
+              </div>
+              <div class="coach-detail-rating"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i> 4.7 (64 avis) • 55€/h</div>
+            </div>
+          </div>
+          <div class="coach-detail-card" onclick="navigateTo('coach-detail')">
+            <div class="coach-detail-avatar" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face'); background-size: cover; background-position: center;"></div>
+            <div class="coach-detail-info">
+              <h4>Claire Dubois</h4>
+              <p class="coach-detail-specialty">Tennis • Mini-tennis enfants</p>
+              <div class="coach-detail-certs">
+                <span class="cert-badge"><i class="ph-fill ph-graduation-cap"></i> Certifiée BE Tennis</span>
+              </div>
+              <div class="coach-detail-rating"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i> 4.5 (32 avis) • 45€/h</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-spacer"></div>
+      </div>
+
+      <!-- Sticky Book Button -->
+      <div class="sticky-book">
+        <div class="sticky-price">
+          <span class="sticky-from">À partir de</span>
+          <span class="sticky-amount">18€<span>/h</span></span>
+        </div>
+        <button class="btn-primary btn-book" onclick="navigateTo('booking')">Réserver</button>
+      </div>
+    </div>
+
+    <!-- ==================== BODY & MIND DETAIL ==================== -->
+    <div id="screen-bodymind-detail" class="screen">
+      <div class="screen-scroll">
+        <div class="detail-hero" style="background-image: url('images/club_pilates.png'); background-size: cover; background-position: center;">
+          <div class="detail-hero-overlay">
+            <button class="back-btn glass-btn" onclick="goBack()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="detail-hero-actions">
+              <button class="glass-btn"><i class="ph ph-heart"></i></button>
+              <button class="glass-btn">↗</button>
+            </div>
+          </div>
+          <div class="detail-hero-content">
+            <span class="detail-tag"><i class="ph ph-person"></i> Pilates • Stretching • Barre au sol</span>
+            <h1>Body &amp; Mind Studio</h1>
+            <div class="detail-meta">
+              <span><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i> 4.8 (203 avis)</span>
+              <span>•</span>
+              <span><i class="ph-fill ph-map-pin"></i> 800m</span>
+              <span>•</span>
+              <span><i class="ph-fill ph-wheelchair"></i> PMR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="detail-gallery">
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=300&h=200&fit=crop'); background-size: cover; background-position: center;"></div>
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&h=200&fit=crop'); background-size: cover; background-position: center;"></div>
+          <div class="gallery-item gallery-more">+15</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="detail-quick-info">
+          <div class="quick-info-item">
+            <span class="qi-icon"><i class="ph ph-coins"></i></span>
+            <span class="qi-label">À partir de</span>
+            <span class="qi-value">15€</span>
+          </div>
+          <div class="quick-info-item">
+            <span class="qi-icon"><i class="ph ph-calendar-blank"></i></span>
+            <span class="qi-label">Horaires</span>
+            <span class="qi-value">7h-21h30</span>
+          </div>
+          <div class="quick-info-item">
+            <span class="qi-icon"><i class="ph ph-users"></i></span>
+            <span class="qi-label">Capacité</span>
+            <span class="qi-value">12 pers.</span>
+          </div>
+          <div class="quick-info-item">
+            <span class="qi-icon"><i class="ph-fill ph-wheelchair"></i></span>
+            <span class="qi-label">Accès</span>
+            <span class="qi-value">PMR</span>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="detail-tabs">
+          <button class="detail-tab active" data-tab="bodymind-info">Infos</button>
+          <button class="detail-tab" data-tab="bodymind-schedule">Planning</button>
+          <button class="detail-tab" data-tab="bodymind-reviews">Avis</button>
+          <button class="detail-tab" data-tab="bodymind-coaches">Coachs</button>
+        </div>
+
+        <!-- Tab: Info -->
+        <div class="detail-tab-content active" id="tab-bodymind-info">
+          <div class="detail-section">
+            <h3>À propos</h3>
+            <p>Body &amp; Mind Studio est un espace dédié au Pilates et au bien-être corporel. Situé Place de la Nation, notre studio lumineux de 200m² est entièrement accessible PMR. Nos cours allient renforcement musculaire, souplesse et relaxation pour un équilibre parfait.</p>
+          </div>
+
+          <div class="detail-section">
+            <h3>Équipements</h3>
+            <div class="amenities-grid">
+              <div class="amenity"><i class="ph ph-barbell"></i> Reformer Pilates</div>
+              <div class="amenity"><i class="ph ph-shower"></i> Douches</div>
+              <div class="amenity"><i class="ph ph-lock-key"></i> Casiers sécurisés</div>
+              <div class="amenity"><i class="ph-fill ph-wheelchair"></i> Rampe PMR</div>
+              <div class="amenity"><i class="ph ph-person-simple-lotus"></i> Tapis & accessoires</div>
+              <div class="amenity"><i class="ph ph-thermometer"></i>️ Salle chauffée</div>
+              <div class="amenity"><i class="ph-fill ph-drop"></i> Fontaine à eau</div>
+              <div class="amenity"><i class="ph ph-wifi-high"></i> Wi-Fi</div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Accessibilité</h3>
+            <div class="accessibility-info">
+              <div class="access-item ok">
+                <span class="access-icon"><i class="ph-fill ph-check-circle"></i></span>
+                <span>Accès fauteuil roulant</span>
+              </div>
+              <div class="access-item ok">
+                <span class="access-icon"><i class="ph-fill ph-check-circle"></i></span>
+                <span>Toilettes adaptées</span>
+              </div>
+              <div class="access-item ok">
+                <span class="access-icon"><i class="ph-fill ph-check-circle"></i></span>
+                <span>Équipements adaptés disponibles</span>
+              </div>
+              <div class="access-item ok">
+                <span class="access-icon"><i class="ph-fill ph-check-circle"></i></span>
+                <span>Coach formé handisport</span>
+              </div>
+              <div class="access-item ok">
+                <span class="access-icon"><i class="ph-fill ph-check-circle"></i></span>
+                <span>Place de parking PMR</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Tarifs</h3>
+            <div class="pricing-table">
+              <div class="price-row">
+                <span>Cours collectif (<span style="color: var(--accent-yellow);">1 séance</span>)</span>
+                <span class="price-amount">15€</span>
+              </div>
+              <div class="price-row">
+                <span>Pack <span style="color: var(--accent-yellow);">10</span> séances</span>
+                <span class="price-amount"><s>150€</s> 120€</span>
+              </div>
+              <div class="price-row">
+                <span>Cours Reformer (<span style="color: var(--accent-yellow);">duo</span>)</span>
+                <span class="price-amount">35€</span>
+              </div>
+              <div class="price-row">
+                <span>Abonnement mensuel illimité</span>
+                <span class="price-amount">89€/mois</span>
+              </div>
+              <div class="price-row student">
+                <span><i class="ph-fill ph-graduation-cap"></i> Tarif étudiant (<span style="color: var(--accent-yellow);">-30%</span>)</span>
+                <span class="price-amount">10,50€/séance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Schedule -->
+        <div class="detail-tab-content" id="tab-bodymind-schedule">
+          <div class="schedule-days">
+            <button class="schedule-day active">
+              <span class="sd-name">Lun</span>
+              <span class="sd-num">23</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Mar</span>
+              <span class="sd-num">24</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Mer</span>
+              <span class="sd-num">25</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Jeu</span>
+              <span class="sd-num">26</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Ven</span>
+              <span class="sd-num">27</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Sam</span>
+              <span class="sd-num">28</span>
+            </button>
+            <button class="schedule-day">
+              <span class="sd-name">Dim</span>
+              <span class="sd-num">29</span>
+            </button>
+          </div>
+          <div class="schedule-list">
+            <div class="schedule-slot" onclick="navigateTo('booking')">
+              <div class="slot-time">
+                <span class="slot-hour">07:00</span>
+                <span class="slot-duration">45min</span>
+              </div>
+              <div class="slot-info">
+                <h4>Pilates Matinal</h4>
+                <p>Julie M. • Tous niveaux</p>
+                <div class="slot-meta">
+                  <span class="slot-spots available">10 places dispo</span>
+                </div>
+              </div>
+              <button class="btn-book-slot">Réserver</button>
+            </div>
+            <div class="schedule-slot" onclick="navigateTo('booking')">
+              <div class="slot-time">
+                <span class="slot-hour">09:30</span>
+                <span class="slot-duration">1h</span>
+              </div>
+              <div class="slot-info">
+                <h4>Reformer Pilates</h4>
+                <p>Julie M. • Intermédiaire</p>
+                <div class="slot-meta">
+                  <span class="slot-spots few">3 places dispo</span>
+                </div>
+              </div>
+              <button class="btn-book-slot">Réserver</button>
+            </div>
+            <div class="schedule-slot" onclick="navigateTo('booking')">
+              <div class="slot-time">
+                <span class="slot-hour">12:00</span>
+                <span class="slot-duration">45min</span>
+              </div>
+              <div class="slot-info">
+                <h4>Stretching Express</h4>
+                <p>Nadia K. • Débutant</p>
+                <div class="slot-meta">
+                  <span class="slot-spots available">8 places dispo</span>
+                </div>
+              </div>
+              <button class="btn-book-slot">Réserver</button>
+            </div>
+            <div class="schedule-slot" onclick="navigateTo('booking')">
+              <div class="slot-time">
+                <span class="slot-hour">17:30</span>
+                <span class="slot-duration">1h</span>
+              </div>
+              <div class="slot-info">
+                <h4>Barre au sol</h4>
+                <p>Nadia K. • Tous niveaux</p>
+                <div class="slot-meta">
+                  <span class="slot-spots available">5 places dispo</span>
+                </div>
+              </div>
+              <button class="btn-book-slot">Réserver</button>
+            </div>
+            <div class="schedule-slot" onclick="navigateTo('booking')">
+              <div class="slot-time">
+                <span class="slot-hour">19:00</span>
+                <span class="slot-duration">1h</span>
+              </div>
+              <div class="slot-info">
+                <h4>Pilates Avancé</h4>
+                <p>Julie M. • Avancé</p>
+                <div class="slot-meta">
+                  <span class="slot-spots full">Complet • Liste d'attente</span>
+                  <span class="slot-badge"><i class="ph-fill ph-wheelchair"></i> Adapté</span>
+                </div>
+              </div>
+              <button class="btn-book-slot waitlist">Liste d'attente</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Reviews -->
+        <div class="detail-tab-content" id="tab-bodymind-reviews">
+          <div class="reviews-summary">
+            <div class="reviews-score">
+              <span class="score-number">4.8</span>
+              <div class="score-stars"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></div>
+              <span class="score-count">203 avis</span>
+            </div>
+            <div class="score-bars">
+              <div class="score-bar-row"><span>5<i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></span><div class="score-bar"><div class="score-fill" style="width:75%"></div></div><span>152</span></div>
+              <div class="score-bar-row"><span>4<i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></span><div class="score-bar"><div class="score-fill" style="width:15%"></div></div><span>30</span></div>
+              <div class="score-bar-row"><span>3<i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></span><div class="score-bar"><div class="score-fill" style="width:7%"></div></div><span>14</span></div>
+              <div class="score-bar-row"><span>2<i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></span><div class="score-bar"><div class="score-fill" style="width:2%"></div></div><span>4</span></div>
+              <div class="score-bar-row"><span>1<i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></span><div class="score-bar"><div class="score-fill" style="width:1%"></div></div><span>3</span></div>
+            </div>
+          </div>
+          <div class="review-tags">
+            <span class="review-tag">Reformer <i class="ph-fill ph-star"></i></span>
+            <span class="review-tag">Propreté <i class="ph-fill ph-sparkle"></i></span>
+            <span class="review-tag">Accessibilité <i class="ph-fill ph-wheelchair"></i></span>
+            <span class="review-tag">Prof top <i class="ph ph-chalkboard-teacher"></i></span>
+          </div>
+          <div class="reviews-list">
+            <div class="review-item">
+              <div class="review-header">
+                <div class="review-avatar" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face'); background-size: cover; background-position: center; color: transparent;">C</div>
+                <div class="review-author">
+                  <h4>Camille B.</h4>
+                  <span>Il y a 2 jours</span>
+                </div>
+                <div class="review-stars"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></div>
+              </div>
+              <p class="review-text">Le studio est magnifique et les cours de Reformer sont incroyables ! Julie est une prof exceptionnelle qui s'adapte vraiment à chaque élève.</p>
+            </div>
+            <div class="review-item">
+              <div class="review-header">
+                <div class="review-avatar" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face'); background-size: cover; background-position: center; color: transparent;">P</div>
+                <div class="review-author">
+                  <h4>Pierre L.</h4>
+                  <span>Il y a 1 semaine</span>
+                </div>
+                <div class="review-stars"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i></div>
+              </div>
+              <p class="review-text">En fauteuil roulant, je cherchais un studio vraiment accessible. Body &amp; Mind est parfait : rampe d'accès, vestiaires adaptés et les coachs sont formés. Je me sens pleinement intégré.</p>
+              <div class="review-badge"><i class="ph-fill ph-check-circle"></i> Avis sur l'accessibilité</div>
+            </div>
+            <div class="review-item">
+              <div class="review-header">
+                <div class="review-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face'); background-size: cover; background-position: center; color: transparent;">L</div>
+                <div class="review-author">
+                  <h4>Léa S.</h4>
+                  <span>Il y a 3 semaines</span>
+                </div>
+                <div class="review-stars"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i><i class="ph ph-star" style="color: var(--text-muted);"></i></div>
+              </div>
+              <p class="review-text">Très bon studio, les cours de barre au sol sont top. Un peu cher mais la qualité est au rendez-vous.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Coaches -->
+        <div class="detail-tab-content" id="tab-bodymind-coaches">
+          <div class="coach-detail-card" onclick="navigateTo('coach-detail')">
+            <div class="coach-detail-avatar" style="background-image: url('https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=200&h=200&fit=crop&crop=face'); background-size: cover; background-position: center;"></div>
+            <div class="coach-detail-info">
+              <h4>Julie Moreau</h4>
+              <p class="coach-detail-specialty">Pilates • Reformer • Stretching</p>
+              <div class="coach-detail-certs">
+                <span class="cert-badge"><i class="ph-fill ph-graduation-cap"></i> Diplômée STOTT Pilates</span>
+                <span class="cert-badge"><i class="ph-fill ph-wheelchair"></i> Formée handisport</span>
+              </div>
+              <div class="coach-detail-rating"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i> 4.9 (142 avis) • 50€/h</div>
+            </div>
+          </div>
+          <div class="coach-detail-card" onclick="navigateTo('coach-detail')">
+            <div class="coach-detail-avatar" style="background-image: url('https://images.unsplash.com/photo-1592621385612-4d7129426394?w=200&h=200&fit=crop&crop=face'); background-size: cover; background-position: center;"></div>
+            <div class="coach-detail-info">
+              <h4>Nadia Kowalski</h4>
+              <p class="coach-detail-specialty">Barre au sol • Stretching • Yoga doux</p>
+              <div class="coach-detail-certs">
+                <span class="cert-badge"><i class="ph-fill ph-graduation-cap"></i> Certifiée BPJEPS</span>
+              </div>
+              <div class="coach-detail-rating"><i class="ph-fill ph-star" style="color: var(--accent-yellow);"></i> 4.7 (78 avis) • 40€/h</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-spacer"></div>
+      </div>
+
+      <!-- Sticky Book Button -->
+      <div class="sticky-book">
+        <div class="sticky-price">
+          <span class="sticky-from">À partir de</span>
+          <span class="sticky-amount">15€<span>/séance</span></span>
         </div>
         <button class="btn-primary btn-book" onclick="navigateTo('booking')">Réserver</button>
       </div>

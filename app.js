@@ -299,14 +299,16 @@ function initDetailTabs() {
   document.querySelectorAll('.detail-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       const tabId = tab.dataset.tab;
-      // Update tab buttons
-      document.querySelectorAll('.detail-tab').forEach(t => t.classList.remove('active'));
+      const parentScreen = tab.closest('.screen');
+      if (!parentScreen) return;
+      // Update tab buttons within this screen only
+      parentScreen.querySelectorAll('.detail-tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      // Update tab content
-      document.querySelectorAll('.detail-tab-content').forEach(content => {
+      // Update tab content within this screen only
+      parentScreen.querySelectorAll('.detail-tab-content').forEach(content => {
         content.classList.remove('active');
       });
-      const targetContent = document.getElementById(`tab-${tabId}`);
+      const targetContent = parentScreen.querySelector(`#tab-${tabId}`);
       if (targetContent) targetContent.classList.add('active');
     });
   });
@@ -316,7 +318,9 @@ function initDetailTabs() {
 function initScheduleDays() {
   document.querySelectorAll('.schedule-day').forEach(day => {
     day.addEventListener('click', () => {
-      document.querySelectorAll('.schedule-day').forEach(d => d.classList.remove('active'));
+      const parentScreen = day.closest('.screen');
+      if (!parentScreen) return;
+      parentScreen.querySelectorAll('.schedule-day').forEach(d => d.classList.remove('active'));
       day.classList.add('active');
     });
   });
