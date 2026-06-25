@@ -36,6 +36,8 @@ function navigateTo(screenId) {
   nextEl.classList.add('active');
   state.currentScreen = screenId;
 
+  if (screenId === 'home') { setupHomeMascot(); }
+
   if (screenId === 'map') {
     setTimeout(() => {
       if (typeof initRealMap === 'function') initRealMap();
@@ -955,15 +957,6 @@ function completeSignup() {
   const tigrouMascot = document.getElementById('home-mascot-tigrou');
   const tigresseMascot = document.getElementById('home-mascot-tigresse');
   
-  if (tigrouMascot && tigresseMascot) {
-    if (homeMascotClass === 'tigrou') {
-      tigrouMascot.style.display = 'block';
-      tigresseMascot.style.display = 'none';
-    } else {
-      tigrouMascot.style.display = 'none';
-      tigresseMascot.style.display = 'block';
-    }
-  }
   
   const signup = document.getElementById('screen-signup');
   signup.classList.add('exiting');
@@ -1140,6 +1133,52 @@ function openPackDetail(packId) {
 
 let packMascotObserver = null;
 let packMascotTimeout = null;
+
+
+let homeMascotObserver = null;
+let homeMascotTimeout = null;
+
+function setupHomeMascot() {
+  const tigrouMascot = document.getElementById('home-mascot-tigrou');
+  const tigresseMascot = document.getElementById('home-mascot-tigresse');
+  const popularSection = document.querySelector('#screen-home .section:nth-of-type(2)'); // Top Coaches section
+  
+  if (!popularSection) return;
+  
+  const avatarRadio = document.querySelector('input[name="avatar"]:checked');
+  const isTigrou = avatarRadio && avatarRadio.value === 'tigrou';
+  
+  let activeMascot = isTigrou ? tigrouMascot : tigresseMascot;
+  let inactiveMascot = isTigrou ? tigresseMascot : tigrouMascot;
+  
+  if (!activeMascot) return;
+  
+  // Reset visibility
+  if (inactiveMascot) inactiveMascot.style.display = 'none';
+  activeMascot.style.display = 'block';
+  activeMascot.classList.add('hidden-mascot');
+  
+  // Clear any existing observer/timeout
+  if (homeMascotObserver) homeMascotObserver.disconnect();
+  if (homeMascotTimeout) clearTimeout(homeMascotTimeout);
+  
+  // Trigger on scroll (Intersection Observer)
+  homeMascotObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      activeMascot.classList.remove('hidden-mascot');
+      homeMascotObserver.disconnect();
+      if (homeMascotTimeout) clearTimeout(homeMascotTimeout);
+    }
+  }, { threshold: 0.1 });
+  
+  homeMascotObserver.observe(popularSection);
+  
+  // Trigger on hesitation (e.g. 5 seconds)
+  homeMascotTimeout = setTimeout(() => {
+    activeMascot.classList.remove('hidden-mascot');
+    if (homeMascotObserver) homeMascotObserver.disconnect();
+  }, 5000);
+}
 
 function setupPackMascot() {
   const mascot = document.getElementById('pack-mascot');
