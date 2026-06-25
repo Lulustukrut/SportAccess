@@ -1150,7 +1150,7 @@ let homeMascotTimeout = null;
 function setupHomeMascot() {
   const tigrouMascot = document.getElementById('home-mascot-tigrou');
   const tigresseMascot = document.getElementById('home-mascot-tigresse');
-  const triggerSection = document.querySelector('#screen-home .section:nth-of-type(4)'); // Handisport section (below fold)
+  const triggerSection = document.querySelector('#screen-home .section:nth-of-type(3)'); // Handisport section (below fold)
   
   if (!triggerSection) return;
   
@@ -1180,6 +1180,7 @@ function setupHomeMascot() {
   
   // Clear any existing observer/timeout
   if (homeMascotObserver) homeMascotObserver.disconnect();
+  if (window.homeMascotTimeout) clearTimeout(window.homeMascotTimeout);
   
   // Trigger on scroll (Intersection Observer)
   const scrollContainer = document.getElementById('home-scroll-container');
@@ -1189,12 +1190,17 @@ function setupHomeMascot() {
         activeMascot.classList.remove('hidden-mascot');
       }, 100);
       homeMascotObserver.disconnect();
+      if (window.homeMascotTimeout) clearTimeout(window.homeMascotTimeout);
     }
-  }, { root: scrollContainer, threshold: 0.1 });
+  }, { root: scrollContainer, threshold: 0 });
   
   homeMascotObserver.observe(triggerSection);
   
-  // We rely entirely on the scroll observer, no timeout.
+  // Trigger on hesitation (e.g. 5 seconds fallback)
+  window.homeMascotTimeout = setTimeout(() => {
+    activeMascot.classList.remove('hidden-mascot');
+    if (homeMascotObserver) homeMascotObserver.disconnect();
+  }, 5000);
 }
 
 function setupPackMascot() {
