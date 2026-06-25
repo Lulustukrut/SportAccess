@@ -96,8 +96,10 @@ function toggleMascot(element) {
 
 // --- Splash Screen ---
 function initSplash() {
-  setTimeout(() => {
-    const splash = document.getElementById('screen-splash');
+  const splash = document.getElementById('screen-splash');
+  const video = splash.querySelector('video');
+
+  function exitSplash() {
     splash.classList.remove('active');
     splash.classList.add('exiting');
     setTimeout(() => {
@@ -108,7 +110,27 @@ function initSplash() {
     const signup = document.getElementById('screen-signup');
     signup.classList.add('active');
     state.currentScreen = 'signup';
-  }, 2500);
+  }
+
+  if (video) {
+    const checkTime = () => {
+      if (video.duration > 0 && video.currentTime >= video.duration * 0.75) {
+        video.removeEventListener('timeupdate', checkTime);
+        exitSplash();
+      }
+    };
+    video.addEventListener('timeupdate', checkTime);
+
+    // Fallback if video is stuck or doesn't play
+    setTimeout(() => {
+      if (splash.classList.contains('active')) {
+        video.removeEventListener('timeupdate', checkTime);
+        exitSplash();
+      }
+    }, 5000);
+  } else {
+    setTimeout(exitSplash, 2500);
+  }
 }
 
 // --- Onboarding ---
